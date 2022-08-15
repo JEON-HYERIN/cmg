@@ -1,0 +1,54 @@
+#wrapper {
+  // min-width: 1240px;
+}
+
+/* skip-nav */
+#skip-nav {
+  position: relative;
+  z-index: 100;
+
+  a {
+    position: absolute;
+    top: -30px;
+    left: 0;
+    width: 300px;
+    background: #333;
+    text-align: center;
+    padding: 2px 6px 0 0;
+    font-size: 13px;
+    line-height: 26px;
+    color: #fff;
+    white-space: nowrap;
+
+    &:focus {
+      top: 0;
+    }
+  }
+}
+
+.blind {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+i[class^="ico-"],
+i[class*="ico-"] {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  vertical-align: top;
+  background-repeat: no-repeat;
+}
+
+div[class*="inner"] {
+  position: relative;
+  margin: 0 auto;
+}
+
+.common-inner {
+
+}
