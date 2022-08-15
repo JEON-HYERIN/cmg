@@ -1,5 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  overflow-x: hidden;
+}
+
 #wrapper {
-  // min-width: 1240px;
+  min-width: 320px;
 }
 
 /* skip-nav */
@@ -50,5 +58,38 @@ div[class*="inner"] {
 }
 
 .common-inner {
+  width: 100%;
+  padding-right: 2.5rem;
+  padding-left: 2.5rem;
 
+  @include mobile {
+    max-width: 640px;
+  }
+  @include tablet-small {
+    max-width: 768px;
+  }
+  @include tablet-large {
+    max-width: 1024px;
+    padding-right: 6rem;
+    padding-left: 6rem;
+  }
+  @include desktop-xsmall {
+    max-width: 1280px;
+  }
+  @include desktop-small {
+    max-width: 1440px;
+  }
+  @include desktop-medium {
+    max-width: 1536px;
+    padding-right: 10rem;
+    padding-left: 10rem;
+  }
+  @include desktop-large {
+    max-width: 1354px;
+    padding: 0;
+  }
+}
+
+span {
+  display: inline-block;
 }

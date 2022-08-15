@@ -1,0 +1,72 @@
+@mixin transition {
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+@mixin transition-transparency {
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+@mixin transition-color {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+@mixin column($standard) {
+  display: flex;
+  flex-direction: column;
+  
+  @if $standard == start {
+    align-items: flex-start;
+  }
+} 
+
+
+// media query
+@mixin desktop-large {
+  // 1920px
+  @media (min-width: $desktop-large) {
+    @content;
+  }
+}
+@mixin desktop-medium {
+  // 1536px
+  @media (min-width: $desktop-medium) {
+    @content;
+  }
+}
+@mixin desktop-small {
+  // 1440px
+  @media (min-width: $desktop-small) {
+    @content;
+  }
+}
+@mixin desktop-xsmall {
+  // 1280px
+  @media (min-width: $desktop-xsmall) {
+    @content;
+  }
+}
+@mixin tablet-large {
+  // 1024px
+  @media (min-width: $tablet-large) {
+    @content;
+  }
+}
+@mixin tablet-small {
+  // 768px
+  @media (min-width: $tablet-small) {
+    @content;
+  }
+}
+@mixin mobile {
+  // 640px
+  @media (min-width: $mobile) {
+    @content;
+  }
+}
+

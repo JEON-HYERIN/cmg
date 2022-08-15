@@ -1,0 +1,40 @@
+// font - CMGLano
+@font-face {
+  font-family: "CMGLano";
+  src: local("CMGLano-Regular"), url("../fonts/CMGLano-Regular.59737bc.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "CMGLano";
+  src: local("CMGLano-SemiLight"), url("../fonts/CMGLano-SemiLight.2dd5571.otf") format("opentype");
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "ApercuMonoPro";
+  src: local("ApercuMonoPro-Medium"), url("../fonts/ApercuMonoPro-Medium.34a3c25.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+html {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: CMGLano;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #333047;
+  line-height: inherit;
+}
+
+.highlight {
+  color: rgb(217, 242, 82);
+}
+

@@ -1,0 +1,27 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: ApercuMonoPro;
+  font-size: .8125rem;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: #333047;
+  background-color: #d9f252;
+  border-radius: 100px;
+  height: 37px;
+  line-height: 2.5;
+  padding: 0 2em;
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  @include tablet-large {
+    height: 39px;
+    padding: 0 3.5em;
+  }
+}
