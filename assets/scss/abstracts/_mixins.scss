@@ -23,6 +23,9 @@
   @if $standard == start {
     align-items: flex-start;
   }
+  @if $standard == center {
+    align-items: center;
+  }
 } 
 
 

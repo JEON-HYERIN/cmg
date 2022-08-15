@@ -2,7 +2,8 @@
   box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
   overflow-x: hidden;
 }
 
@@ -65,25 +66,31 @@ div[class*="inner"] {
   @include mobile {
     max-width: 640px;
   }
+
   @include tablet-small {
     max-width: 768px;
   }
+
   @include tablet-large {
     max-width: 1024px;
     padding-right: 6rem;
     padding-left: 6rem;
   }
+
   @include desktop-xsmall {
     max-width: 1280px;
   }
+
   @include desktop-small {
     max-width: 1440px;
   }
+
   @include desktop-medium {
     max-width: 1536px;
     padding-right: 10rem;
     padding-left: 10rem;
   }
+
   @include desktop-large {
     max-width: 1354px;
     padding: 0;
@@ -92,4 +99,30 @@ div[class*="inner"] {
 
 span {
   display: inline-block;
+}
+
+section[class^="sc-"] {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+
+  @include desktop-xsmall {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+
+  @include desktop-medium {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+  }
+
+  &.full {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 80vh;
+
+    @include desktop-xsmall {
+      min-height: 100vh;
+    }
+  }
 }
