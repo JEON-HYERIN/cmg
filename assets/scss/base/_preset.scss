@@ -7,6 +7,11 @@ html {
   overflow-x: hidden;
 }
 
+svg {
+  display: block;
+  vertical-align: middle;
+}
+
 #wrapper {
   min-width: 320px;
 }
@@ -94,6 +99,21 @@ div[class*="inner"] {
   @include desktop-large {
     max-width: 1354px;
     padding: 0;
+  }
+
+  &.huge {
+    @include tablet-large {
+      padding-left: 4rem;
+      padding-right: 4rem;
+    }
+    @include desktop-medium {
+      padding-left: 6rem;
+      padding-right: 6rem;
+    }
+    @include desktop-large {
+      max-width: 1536px;
+      padding: 0;
+    }
   }
 }
 

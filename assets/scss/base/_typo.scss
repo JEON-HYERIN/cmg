@@ -35,13 +35,13 @@ body {
 }
 
 .highlight {
-  color: rgb(217, 242, 82);
+  color: $color-point;
 }
 
 .sc-title {
   display: inline-flex;
   align-items: center;
-  border: 2px solid rgb(217, 242, 82);
+  border: 2px solid $color-point;
   padding: 0.5rem 1.25rem;
   margin-bottom: 1.5rem;
   font-family: ApercuMonoPro;
@@ -66,5 +66,9 @@ body {
 
   @include tablet-large {
     line-height: 1.25;
+  }
+
+  &.white {
+    color: #fff;
   }
 }

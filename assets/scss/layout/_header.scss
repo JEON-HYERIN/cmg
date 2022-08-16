@@ -27,7 +27,7 @@
     margin-right: auto;
 
     @include tablet-large {
-      margin-left: 0px
+      margin-left: 0px;
     }
   }
 
@@ -45,8 +45,13 @@
 
     a {
       display: block;
+      height: 100%;
 
-      &::before {}
+      svg {
+        width: 100%;
+        height: 100%;
+        fill: currentColor;
+      }
     }
   }
 
@@ -271,12 +276,16 @@
       color: #fff;
       @include transition-color;
 
+      &:hover {
+        color: $color-point;
+      }
       @include tablet-large {
         padding-top: 0.4em;
         padding-bottom: 0.4em;
       }
 
-      i[class^="ico-"] {
+      svg {
+        fill: currentColor;
         width: 1.5rem;
         height: 1.5rem;
 
@@ -302,7 +311,7 @@
     .title {
       font-size: clamp(30px, 3vw, 55px);
       line-height: 1.25;
-      color: rgb(217, 242, 82);
+      color: $color-point;
       @include column(start);
     }
 
