@@ -4,6 +4,12 @@
   transition-duration: 150ms;
 }
 
+@mixin transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 @mixin transition-transparency {
   transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
@@ -12,6 +18,12 @@
 
 @mixin transition-color {
   transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+@mixin transition-opacity {
+  transition-property: opacity;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -26,7 +38,25 @@
   @if $standard == center {
     align-items: center;
   }
-} 
+}
+
+@mixin round-title($color-border, $color-text) {
+  display: inline-flex;
+  align-items: center;
+  border: 2px solid $color-border;
+  padding: 0.5rem 1.25rem;
+  margin-bottom: 1.5rem;
+  font-family: ApercuMonoPro;
+  font-size: .8125rem;
+  text-transform: uppercase;
+  line-height: 1;
+  color: $color-text;
+  border-radius: 9999px;
+
+  @include tablet-large {
+    font-size: .9375rem;
+  }
+}
 
 
 // media query
