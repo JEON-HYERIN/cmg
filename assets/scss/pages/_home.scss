@@ -89,17 +89,6 @@
       position: 50% 16.2835px;
       size: cover;
     }
-
-    &::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: $color-navy;
-      opacity: .5;
-    }
   }
 }
 
@@ -478,23 +467,122 @@
       width: 100%;
       height: 100%;
 
-      &::after {
-        content: '';
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: $color-navy;
-        opacity: .5;
-      }
       img {
         width: 100%;
         height: 100%;
         object-position: center;
         object-fit: cover;
       }
+    }
+  }
+}
+
+// insight
+.sc-insight {
+  .title-area {
+    .common-inner {}
+    .sc-sub-title {
+      @include column(start);
+      .row {}
+    }
+  }
+  .insight-list-wrap {
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+    @include tablet-large {
+      padding-bottom: 6rem;
+      padding-top: 4rem;
+      padding-left: 18vw;
+    }
+    @include desktop-xsmall {
+      padding-top: 6rem;
+      padding-left: 15vw;
+    }
+    @include desktop-medium {
+      padding-left: 18vw;
+    }
+    @include desktop-large {
+      padding-left: 23vw;
+    }
+  }
+  .insight-list {
+    transition-timing-function: ease-out;
+    margin: 0 auto;
+  }
+  .insight-item {
+    @include mobile {
+      max-width: 460px;
+    }
+  }
+  .insight-area {
+    position: relative;
+    display: block;
+    margin-right: 1.75rem;
+    
+    &.no-image {
+      background-color: #006e6e;
+      min-height: 310px;
+    }
+    .thumb-box {
+      height: 100% !important;
+      img {
+        width: 100%;
+        height: 100%;
+        min-height: 300px;
+        object-position: center;
+        object-fit: cover;
+        animation-name: fadeIn;
+        animation-fill-mode: both;
+        animation-duration: 1s;
+      }
+    }
+    .info-box-wrap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      display: flex;
+      align-items: flex-end;
+      width: 100%;
+      height: 100%;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      padding-bottom: 3rem;
+      color: $color-white;
+
+      @include tablet-large {
+        padding-left: 4rem;
+        padding-right: 4rem;
+        padding-bottom: 4rem;
+      }
+    }
+    .type {
+      display: flex;
+      font-family: ApercuMonoPro;
+      font-size: 0.625rem;
+      text-transform: uppercase;
+
+      @include tablet-large {
+        font-size: .9375rem;
+      }
+    }
+    .title {
+      display: block;
+      margin-top: 1.25rem;
+      margin-bottom: 1.25rem;
+      font-size: 1.4375rem;
+      @include tablet-large {
+        margin-top: 1.75rem;
+        margin-bottom: 1.75rem;
+        font-size: 2.1875rem;
+      }
+    }
+    .btn-view {
+      @include round-title(null, $color-navy);
+      margin-bottom: 0;
+      border: none;
+      background: $color-point;
+      @include transition-color;
     }
   }
 }

@@ -145,3 +145,18 @@ section[class^="sc-"] {
     }
   }
 }
+
+.thumb-dim {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $color-navy;
+    opacity: .5;
+  }
+}
