@@ -105,10 +105,12 @@ div[class*="inner"] {
       padding-left: 4rem;
       padding-right: 4rem;
     }
+
     @include desktop-medium {
       padding-left: 6rem;
       padding-right: 6rem;
     }
+
     @include desktop-large {
       max-width: 1536px;
       padding: 0;
@@ -120,7 +122,8 @@ span {
   display: inline-block;
 }
 
-section[class^="sc-"] {
+section[class^="sc-"],
+#footer {
   padding-top: 5rem;
   padding-bottom: 5rem;
 
@@ -158,5 +161,101 @@ section[class^="sc-"] {
     height: 100%;
     background-color: $color-navy;
     opacity: .5;
+  }
+}
+
+// animation
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.connect-area {
+  display: flex;
+  align-items: center;
+
+  .title {
+    margin-right: 1rem;
+    font-size: .9375rem;
+    font-weight: 300;
+    line-height: 1;
+    color: $color-white;
+    white-space: nowrap;
+  }
+
+  .sns-list {
+    flex: 1 1 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .link-sns {
+    display: block;
+    padding: 0.5rem;
+    color: $color-white;
+    @include transition-color;
+
+    &:hover {
+      color: $color-point;
+    }
+
+    svg {
+      fill: currentColor;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+}
+
+.signup-area {
+  margin-top: 4rem;
+  @include column(start);
+
+  @include tablet-large {
+    margin-top: 6rem;
+    order: 2;
+  }
+
+  .title {
+    font-size: clamp(30px, 3vw, 55px);
+    line-height: 1.25;
+    color: $color-point;
+    @include column(start);
+  }
+
+  .input-email {
+    width: 100%;
+    font-family: CMGLano;
+    font-size: 1.125rem;
+    font-weight: 300;
+    line-height: 1.25;
+    color: $color-white;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid $color-white;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    @include transition;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, .5);
+    }
+
+    @include tablet-large {
+      margin-top: 2rem;
+    }
+  }
+
+  .btn-send {
+    margin-top: 1rem;
+
+    @include tablet-large {
+      margin-top: 1.5rem;
+    }
   }
 }

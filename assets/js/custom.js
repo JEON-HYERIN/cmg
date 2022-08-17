@@ -19,4 +19,8 @@ $(function(){
     slidesPerGroupAuto: true,
     grabCursor: true,
   });
+  
+  // footer copyright 
+  const year = new Date().getFullYear();
+  $('.copyright .year').text(year);
 });
