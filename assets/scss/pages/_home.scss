@@ -1,13 +1,14 @@
 // visual
 .sc-visual {
   position: relative;
-  height: 100vh;
+  height: 67vh;
   @include column(start);
   justify-content: flex-end;
   overflow: hidden;
+  padding: 0 !important;
 
-  .content {
-    // height: 100%;
+  @include landscape {
+    height: 100vh;
   }
 
   .common-inner {
@@ -17,11 +18,12 @@
   .title-area {
     position: absolute;
     bottom: 3.5rem;
-    transform: translateY(50%);
+    transform: translateY(-50%);
     z-index: 1;
 
     @include tablet-large {
       bottom: 50%;
+      transform: translateY(50%);
     }
 
     .title {
@@ -179,15 +181,12 @@
 
   .group-title {
     order: 2;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    gap: 3rem;
 
-    &>div {
-      width: calc((100% - 3rem) / 2);
-
-      @include tablet-large {
-        width: calc((100% - 6rem) / 2);
-      }
+    @include tablet-large {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 6rem;
     }
   }
 
@@ -292,26 +291,12 @@
   .value-area {
     font-family: CMGLano;
     font-weight: 400;
-    // width: calc((100% - 4rem) / 2);
-
-    @include tablet-large {
-      // width: calc((100% - 3rem) / 2);
-    }
-
-    @include desktop-xsmall {
-      // width: calc((100% - 6rem) / 2);
-    }
 
     &:nth-child(n+3) {
-      // margin-top: 4rem;
-      justify-self: end;
+      justify-self: auto;
 
       @include tablet-large {
-        // margin-top: 3rem;
-      }
-
-      @include desktop-xsmall {
-        // margin-top: 6rem;
+        justify-self: end;
       }
     }
 
@@ -357,38 +342,89 @@
 
   .sc-sub-title {}
 
-  .client-list {
-    margin-top: 3rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-
-    @include tablet-large {
-      margin-top: 5rem;
+  .client-list-wrap {
+    &.pc {
+      display: none;
     }
 
-    @include desktop-xsmall {
-      margin-top: 6rem;
+    &.mobile {
+      display: block;
+
+      .client-list {
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      
+        @include tablet-large {
+          margin-top: 5rem;
+        }
+      
+        @include desktop-xsmall {
+          margin-top: 6rem;
+        }
+      
+        @include desktop-medium {
+          margin-top: 10rem;
+        }
+      }
     }
 
-    @include desktop-medium {
-      margin-top: 10rem;
+    @include mobile {
+      &.pc {
+        display: block;
+      }
+
+      &.mobile {
+        display: none;
+      }
     }
   }
+  .swiper {
+    padding-bottom: 3rem;
 
-  .client-item {
-    width: calc((100% - 1.5rem) / 4);
-
-    &:nth-child(n+5) {
-      margin-top: 0.5rem;
-    }
-
-    .logo {
+    .swiper-slide {
       display: flex;
-      align-items: center;
+      flex-wrap: wrap;
+      justify-content: space-between;
 
-      img {}
+      .logo {
+        width: calc((100% - 0.5rem) / 2);
+      }
     }
+
+    .swiper-pagination {
+      bottom: 0;
+
+      &-bullet {
+        margin-left: 0.75rem;
+        margin-right: 0.75rem;
+        border: 1px solid $color-navy;
+        background-color: $color-white;
+        opacity: 1;
+
+        &-active {
+          background-color: $color-navy;
+        }
+      }
+    }
+  }
+}
+
+.client-list {
+  margin-top: 3rem;
+}
+
+.client-item {
+  width: calc((100% - 1.5rem) / 4);
+
+  &:nth-child(n+5) {
+    margin-top: 0.5rem;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
   }
 }
 

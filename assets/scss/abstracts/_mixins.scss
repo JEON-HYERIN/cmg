@@ -60,6 +60,11 @@
 
 
 // media query
+@mixin landscape {
+  @media (orientation: landscape) {
+    @content;
+  }
+}
 @mixin desktop-large {
   // 1920px
   @media (min-width: $desktop-large) {

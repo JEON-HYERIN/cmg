@@ -11,6 +11,16 @@ $(function(){
     $(this).toggleClass('close');
   });
 
+  // client
+  const clientSwiper = new Swiper('.sc-client .client-list-wrap.swiper', {
+    // autoplay: true,
+    // loop: true,
+    pagination: {
+      el: '.sc-client .client-list-wrap .swiper-pagination',
+      clickable: true
+    },
+  });
+
   // insight
   const insightSwiper = new Swiper('.sc-insight .swiper', {
     // autoplay: true,

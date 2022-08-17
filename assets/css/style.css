@@ -376,13 +376,15 @@ body { font-family: CMGLano; font-size: 1rem; font-weight: 300; color: #333047; 
 
 @media (min-width: 1024px) { .btn { height: 39px; padding: 0 3.5em; } }
 
-.sc-visual { position: relative; height: 100vh; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; overflow: hidden; }
+.sc-visual { position: relative; height: 67vh; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; overflow: hidden; padding: 0 !important; }
+
+@media (orientation: landscape) { .sc-visual { height: 100vh; } }
 
 .sc-visual .common-inner { height: 100%; }
 
-.sc-visual .title-area { position: absolute; bottom: 3.5rem; -webkit-transform: translateY(50%); transform: translateY(50%); z-index: 1; }
+.sc-visual .title-area { position: absolute; bottom: 3.5rem; -webkit-transform: translateY(-50%); transform: translateY(-50%); z-index: 1; }
 
-@media (min-width: 1024px) { .sc-visual .title-area { bottom: 50%; } }
+@media (min-width: 1024px) { .sc-visual .title-area { bottom: 50%; -webkit-transform: translateY(50%); transform: translateY(50%); } }
 
 .sc-visual .title-area .title { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; line-height: 1.375; font-size: clamp(2.8125rem, 8vw, 9.375rem); color: #fff; }
 
@@ -424,11 +426,9 @@ body { font-family: CMGLano; font-size: 1rem; font-weight: 300; color: #333047; 
 
 .sc-whatwedo .common-inner { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; }
 
-.sc-whatwedo .group-title { -webkit-box-ordinal-group: 3; -ms-flex-order: 2; order: 2; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; }
+.sc-whatwedo .group-title { -webkit-box-ordinal-group: 3; -ms-flex-order: 2; order: 2; display: -ms-grid; display: grid; gap: 3rem; }
 
-.sc-whatwedo .group-title > div { width: calc((100% - 3rem) / 2); }
-
-@media (min-width: 1024px) { .sc-whatwedo .group-title > div { width: calc((100% - 6rem) / 2); } }
+@media (min-width: 1024px) { .sc-whatwedo .group-title { -ms-grid-columns: (minmax(0, 1fr))[2]; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6rem; } }
 
 .sc-whatwedo .title-area .sc-title { color: #fff; }
 
@@ -464,7 +464,9 @@ body { font-family: CMGLano; font-size: 1rem; font-weight: 300; color: #333047; 
 
 .sc-whatwedo .value-area { font-family: CMGLano; font-weight: 400; }
 
-.sc-whatwedo .value-area:nth-child(n+3) { -ms-grid-column-align: end; justify-self: end; }
+.sc-whatwedo .value-area:nth-child(n+3) { -ms-grid-column-align: auto; justify-self: auto; }
+
+@media (min-width: 1024px) { .sc-whatwedo .value-area:nth-child(n+3) { -ms-grid-column-align: end; justify-self: end; } }
 
 .sc-whatwedo .value-area .value { display: -webkit-inline-box; display: -ms-inline-flexbox; display: inline-flex; margin-top: 1rem; pointer-events: none; color: #d9f252; font-size: clamp(100px, 11vw, 205px); line-height: 1; }
 
@@ -474,19 +476,40 @@ body { font-family: CMGLano; font-size: 1rem; font-weight: 300; color: #333047; 
 
 .sc-client .title-area { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; }
 
-.sc-client .client-list { margin-top: 3rem; display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; }
+.sc-client .client-list-wrap.pc { display: none; }
 
-@media (min-width: 1024px) { .sc-client .client-list { margin-top: 5rem; } }
+.sc-client .client-list-wrap.mobile { display: block; }
 
-@media (min-width: 1280px) { .sc-client .client-list { margin-top: 6rem; } }
+.sc-client .client-list-wrap.mobile .client-list { display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; }
 
-@media (min-width: 1536px) { .sc-client .client-list { margin-top: 10rem; } }
+@media (min-width: 1024px) { .sc-client .client-list-wrap.mobile .client-list { margin-top: 5rem; } }
 
-.sc-client .client-item { width: calc((100% - 1.5rem) / 4); }
+@media (min-width: 1280px) { .sc-client .client-list-wrap.mobile .client-list { margin-top: 6rem; } }
 
-.sc-client .client-item:nth-child(n+5) { margin-top: 0.5rem; }
+@media (min-width: 1536px) { .sc-client .client-list-wrap.mobile .client-list { margin-top: 10rem; } }
 
-.sc-client .client-item .logo { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+@media (min-width: 640px) { .sc-client .client-list-wrap.pc { display: block; }
+  .sc-client .client-list-wrap.mobile { display: none; } }
+
+.sc-client .swiper { padding-bottom: 3rem; }
+
+.sc-client .swiper .swiper-slide { display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; }
+
+.sc-client .swiper .swiper-slide .logo { width: calc((100% - 0.5rem) / 2); }
+
+.sc-client .swiper .swiper-pagination { bottom: 0; }
+
+.sc-client .swiper .swiper-pagination-bullet { margin-left: 0.75rem; margin-right: 0.75rem; border: 1px solid #333047; background-color: #fff; opacity: 1; }
+
+.sc-client .swiper .swiper-pagination-bullet-active { background-color: #333047; }
+
+.client-list { margin-top: 3rem; }
+
+.client-item { width: calc((100% - 1.5rem) / 4); }
+
+.client-item:nth-child(n+5) { margin-top: 0.5rem; }
+
+.client-item .logo { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
 
 .sc-study { position: relative; z-index: 1; }
 
