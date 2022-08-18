@@ -216,11 +216,6 @@ section[class^="sc-"],
   margin-top: 4rem;
   @include column(start);
 
-  @include tablet-large {
-    margin-top: 6rem;
-    order: 2;
-  }
-
   .title {
     font-size: clamp(30px, 3vw, 55px);
     line-height: 1.25;
@@ -235,6 +230,7 @@ section[class^="sc-"],
     font-weight: 300;
     line-height: 1.25;
     color: $color-white;
+    margin-top: 0.75rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     border-bottom: 1px solid $color-white;

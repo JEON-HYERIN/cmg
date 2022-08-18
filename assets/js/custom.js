@@ -32,12 +32,20 @@ $(function(){
   });
 
   // insight
-  const insightSwiper = new Swiper('.sc-insight .swiper', {
-    // autoplay: true,
-    // loop: true,
-    slidesPerView: true,
-    slidesPerGroupAuto: true,
+  const insightSwiper = new Swiper('.sc-insight .insight-list-wrap.swiper', {
+    slidesPerView: 1.4,
+    centeredSlides: true,
     grabCursor: true,
+    pagination: {
+      el: '.sc-insight .insight-list-wrap .swiper-pagination',
+      clickable: true
+    },
+    breakpoints: {
+      1024: {
+        slidesPerView: 'auto',
+        centeredSlides: false,
+      }
+    }
   });
   
   // footer copyright 
