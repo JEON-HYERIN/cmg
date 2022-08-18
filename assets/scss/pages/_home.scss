@@ -330,10 +330,6 @@
 
 // client
 .sc-client {
-  .common-inner {}
-
-  .group-title {}
-
   .title-area {
     @include column(start);
   }
@@ -345,10 +341,6 @@
   .client-list-wrap {
     &.pc {
       display: none;
-    }
-
-    &.mobile {
-      display: block;
 
       .client-list {
 
@@ -368,6 +360,10 @@
           margin-top: 10rem;
         }
       }
+    }
+
+    &.mobile {
+      display: block;
     }
 
     @include mobile {
@@ -431,72 +427,42 @@
 // study
 .sc-study {
   position: relative;
-  z-index: 1;
 
-  .group-title {
-    .common-inner {}
-
-    .sc-title {
-      position: absolute;
-      top: 5rem;
-      z-index: 1;
-      color: $color-white;
-
-      @include tablet-large {
-        position: relative;
-        top: auto;
-        margin-bottom: 8rem;
+  .content {
+    &.pc {
+      display: none;
+    }
+    &.mobile {
+      display: block;
+    }
+    @include tablet-large {
+      &.pc {
+        display: block;
+      }
+      &.mobile {
+        display: none;
       }
     }
   }
 
-  .study-list {
-    display: flex;
-    flex-direction: column;
+  .sc-title {
+    position: absolute;
+    top: 5rem;
+    z-index: 2;
+    color: $color-white;
+    margin-bottom: 0;
 
-    &:hover {
-      .sc-sub-title {
-        opacity: 0.5;
-      }
+    @include tablet-large {
+      position: relative;
+      top: auto;
+      margin-bottom: 8rem;
     }
   }
-
-  .study-item {
-    margin-bottom: 8rem;
-
-    &:hover {
-
-      .sc-sub-title {
-        opacity: 1;
-      }
-
-      .badge-wrap {
-        opacity: 1;
-        transform: translateX(0) scale(1);
-      }
-    }
-  }
-
   .study-area {
-    position: relative;
-    display: block;
-    z-index: 1;
-
-    .sc-sub-title {
-      max-width: 64rem;
-      @include transition-opacity;
-      transition-duration: 500ms;
-    }
-
     .badge-wrap {
       display: flex;
       flex-wrap: wrap;
-      transform: translateX(0.5rem) scale(1);
-      @include transition-all;
-      transition-duration: 500ms;
-      opacity: 0;
     }
-
     .badge {
       @include round-title($color-white, $color-white);
       margin-bottom: 1rem;
@@ -504,35 +470,141 @@
     }
   }
 
-  .bg-area {
-    position: absolute;
-    left: 0;
-    top: 0;
-    transform: translate(0px, 0px);
-    inset: 0px auto auto 0px;
-    margin: 0px;
-    max-width: 1920px;
-    width: 1920px;
-    max-height: 937px;
-    height: 937px;
-    padding: 0px;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
 
-    &.fixed {
-      position: fixed;
+  .content {
+    &.pc {
+
+      .study-list {
+        display: flex;
+        flex-direction: column;
+    
+        &:hover {
+          .sc-sub-title {
+            opacity: 0.5;
+          }
+        }
+      }
+    
+      .study-item {
+        margin-bottom: 8rem;
+    
+        &:hover {
+    
+          .sc-sub-title {
+            opacity: 1;
+          }
+    
+          .badge-wrap {
+            opacity: 1;
+            transform: translateX(0) scale(1);
+          }
+        }
+      }
+    
+      .study-area {
+        position: relative;
+        display: block;
+        z-index: 1;
+    
+        .sc-sub-title {
+          max-width: 64rem;
+          @include transition-opacity;
+          transition-duration: 500ms;
+        }
+    
+        .badge-wrap {
+          transform: translateX(0.5rem) scale(1);
+          @include transition-all;
+          transition-duration: 500ms;
+          opacity: 0;
+        }
+      }
+    
+      .bg-area {
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform: translate(0px, 0px);
+        inset: 0px auto auto 0px;
+        margin: 0px;
+        max-width: 1920px;
+        width: 1920px;
+        max-height: 937px;
+        height: 937px;
+        padding: 0px;
+    
+        &.fixed {
+          position: fixed;
+        }
+    
+        .bg {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
     }
 
-    .bg {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
+    &.mobile {
+      .inner {
+        position: relative;
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+        padding-right: 2.5rem;
+        padding-left: 2.5rem;
+      }
 
-      img {
+      .study-list-wrap {
+        height: 65vh;
+      }
+
+      .study-area {
+        display: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
         width: 100%;
         height: 100%;
-        object-position: center;
-        object-fit: cover;
+
+        .thumb {
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+        .caption-box {
+          padding-bottom: 2.5rem;
+          color: $color-white;
+          z-index: 1;
+        }
+        .sc-sub-title {
+          margin-bottom: 1rem;
+        }
+
+        .badge {
+          font-size: 0.625rem;
+        }
+      }
+      .swiper-pagination {
+        right: 1.5rem;
+        &-bullet {
+          display: block;
+          opacity: 1;
+          margin-top: 1.5rem;
+          margin-bottom: 1.5rem;
+          background: $color-white;
+          &-active {
+            background: $color-point;
+          }
+        }
       }
     }
   }

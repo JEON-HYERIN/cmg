@@ -21,6 +21,16 @@ $(function(){
     },
   });
 
+  // study
+  const studySwiper = new Swiper('.sc-study .study-list-wrap.swiper', {
+    direction: 'vertical',
+    effect: 'fade',
+    pagination: {
+      el: '.sc-study .study-list-wrap .swiper-pagination',
+      clickable: true
+    },
+  });
+
   // insight
   const insightSwiper = new Swiper('.sc-insight .swiper', {
     // autoplay: true,
