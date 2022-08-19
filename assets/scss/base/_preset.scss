@@ -64,8 +64,10 @@ div[class*="inner"] {
 
 .common-inner {
   width: 100%;
-  padding-right: 2.5rem;
-  padding-left: 2.5rem;
+  padding: {
+    right: 2.5rem;
+    left: 2.5rem;
+  }
 
   @include mobile {
     max-width: 640px;
@@ -77,8 +79,10 @@ div[class*="inner"] {
 
   @include tablet-large {
     max-width: 1024px;
-    padding-right: 6rem;
-    padding-left: 6rem;
+    padding: {
+      right: 6rem;
+      left: 6rem;
+    }
   }
 
   @include desktop-xsmall {
@@ -89,10 +93,16 @@ div[class*="inner"] {
     max-width: 1440px;
   }
 
+  @include desktop {
+    max-width: 1280px;
+  }
+
   @include desktop-medium {
     max-width: 1536px;
-    padding-right: 10rem;
-    padding-left: 10rem;
+    padding: {
+      right: 10rem;
+      left: 10rem;
+    }
   }
 
   @include desktop-large {
@@ -102,13 +112,17 @@ div[class*="inner"] {
 
   &.huge {
     @include tablet-large {
-      padding-left: 4rem;
-      padding-right: 4rem;
+      padding: {
+        left: 4rem;
+        right: 4rem;
+      }
     }
 
     @include desktop-medium {
-      padding-left: 6rem;
-      padding-right: 6rem;
+      padding: {
+        left: 6rem;
+        right: 6rem;
+      }
     }
 
     @include desktop-large {
@@ -124,17 +138,23 @@ span {
 
 section[class^="sc-"],
 #footer {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding: {
+    top: 5rem;
+    bottom: 5rem; 
+  }
 
   @include desktop-xsmall {
-    padding-top: 10rem;
-    padding-bottom: 10rem;
+    padding: {
+      top: 10rem;
+      bottom: 10rem;
+    }
   }
 
   @include desktop-medium {
-    padding-top: 12rem;
-    padding-bottom: 12rem;
+    padding: {
+      top: 12rem;
+      bottom: 12rem;
+    }
   }
 
   &.full {
@@ -181,8 +201,10 @@ section[class^="sc-"],
 
   .title {
     margin-right: 1rem;
-    font-size: .9375rem;
-    font-weight: 300;
+    font: {
+      size: .9375rem;
+      weight: 300;
+    }
     line-height: 1;
     color: $color-white;
     white-space: nowrap;
@@ -216,6 +238,10 @@ section[class^="sc-"],
   margin-top: 4rem;
   @include column(start);
 
+  form {
+    width: 100%;
+  }
+
   .title {
     font-size: clamp(30px, 3vw, 55px);
     line-height: 1.25;
@@ -225,14 +251,18 @@ section[class^="sc-"],
 
   .input-email {
     width: 100%;
-    font-family: CMGLano;
-    font-size: 1.125rem;
-    font-weight: 300;
+    font: {
+      family: CMGLano;
+      size: 1.125rem;
+      weight: 300;
+    }
     line-height: 1.25;
     color: $color-white;
     margin-top: 0.75rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding: {
+      top: 0.5rem;
+      bottom: 0.5rem;
+    }
     border-bottom: 1px solid $color-white;
     outline: 2px solid transparent;
     outline-offset: 2px;

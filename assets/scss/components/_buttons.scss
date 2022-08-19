@@ -2,22 +2,19 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: ApercuMonoPro;
-  font-size: .8125rem;
+  font: {
+    family: ApercuMonoPro;
+    size: .8125rem;
+  }
   text-transform: uppercase;
   white-space: nowrap;
-  color: #333047;
-  background-color: #d9f252;
+  color: $color-navy;
+  background-color: $color-point;
   border-radius: 100px;
   height: 37px;
   line-height: 2.5;
   padding: 0 2em;
-  transition-property: background-color, border-color, color, fill, stroke;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
+  @include transition-color;
   user-select: none;
 
   @include tablet-large {
@@ -30,8 +27,10 @@
   bottom: 0;
 
   .swiper-pagination-bullet {
-    margin-left: 0.75rem;
-    margin-right: 0.75rem;
+    margin: {
+      left: 0.75rem;
+      right: 0.75rem;
+    }
     border: 1px solid $color-navy;
     background-color: $color-white;
     opacity: 1;

@@ -5,28 +5,35 @@
 
   .common-inner {
     display: flex;
-    flex-wrap: wrap;
+    flex: {
+      wrap: wrap;
+      direction: column;
+    }
 
     @include tablet-large {
-      padding-left: 5rem;
-      padding-right: 5rem;
+      padding: {
+        left: 5rem;
+        right: 5rem;
+      }
     }
 
     @include desktop-medium {
-      padding-left: 8rem;
-      padding-right: 8rem;
+      padding: {
+        left: 8rem;
+        right: 8rem; 
+      }
     }
 
     @include desktop-large {
-      padding-left: 0;
-      padding-right: 0;
+      padding: {
+        left: 0;
+        right: 0; 
+      }
       max-width: 1440px;
     }
 
-    &>* {
-      @include desktop-small {
-        width: 66%;
-      }
+    @include tablet-small {
+      flex-direction: row;
     }
   }
 
@@ -34,17 +41,32 @@
     display: block;
   }
 
-  .column-left {}
-
-  .column-right {}
-
-  .footer-title {
+  .title-area {
     display: flex;
     align-items: flex-start;
+    flex-direction: column;
+    order: 1;
 
     @include tablet-small {
       order: 1;
       width: 100%;
+    }
+
+    @include desktop-xsmall {
+      flex-direction: row;
+    }
+
+    @include desktop-small {
+      width: 66%;
+    }
+  }
+
+  .footer-title {
+
+    pointer-events: none;
+
+    @include desktop-xsmall {
+      pointer-events: auto;
     }
 
     a {
@@ -62,21 +84,50 @@
     }
   }
 
+  .link-contact {
+    display: inline-flex;
+    background-color: transparent;
+    color: $color-white;
+    border: 1px solid $color-white;
+
+    @include desktop-xsmall {
+      display: none;
+    }
+
+    svg {
+      width: 0.8125rem;
+      height: 0.8125rem;
+      margin-left: 1em;
+      stroke: currentColor;
+      @include transition;
+    }
+
+    &:hover {
+      background-color: $color-white;
+      color: $color-navy;
+    }
+  }
+
   .group-address {
     @include column(null);
     margin-top: 4rem;
-    margin-bottom: 4rem;
+    order: 2;
 
     @include tablet-small {
       order: 2;
+      flex: {
+        direction: row;
+        wrap: wrap;
+      }
       width: 100%;
-      flex-direction: row;
-      flex-wrap: wrap;
     }
 
     @include tablet-large {
       margin-top: 5rem;
-      margin-bottom: 5rem;
+    }
+
+    @include desktop-small {
+      width: 66%;
     }
 
     .title {
@@ -96,88 +147,104 @@
   .address-area-wrap {
     display: flex;
     margin-top: 2rem;
+    flex-direction: column;
+
+    @include tablet-small {
+      width: 100%;
+    }
 
     @include tablet-large {
       margin-top: 2.5rem;
     }
 
-    .inner1,
-    .inner2 .address-area {
+    @include tablet-small {
+      flex-direction: row;
+    }
+  }
+
+  .inner1,
+  .inner2 {
+    margin: 0;
+
+    @include tablet-small {
+      margin: 0 auto;
+    }
+  }
+
+  .inner1,
+  .inner2 .address-area {
+    @include tablet-small {
+      flex: 1 1 0;
+    }
+
+    @include tablet-large {
+      display: flex;
+      flex: 1 1 auto;
+    }
+
+    .location {
+      display: block;
+      font: {
+        family: ApercuMonoPro;
+        size: .9375rem;
+      }
+      text-transform: uppercase;
+      color: $color-point;
+
+      @include tablet-large {
+        margin-bottom: 1.25rem;
+        width: 100%;
+      }
+    }
+  }
+
+  .inner1 {
+
+    @include tablet-large {
+      width: 75%;
+      flex-wrap: wrap;
+    }
+
+    .address-area {
+      margin-top: 1.25rem;
+
+      @include tablet-large {
+        margin-top: 0.75rem;
+        max-width: 50%;
+        padding-right: 2.5rem;
+      }
+
+      @include desktop-large {
+        padding-right: 4rem;
+      }
+    }
+  }
+
+  .inner2 {
+    @include tablet-small {
+      flex: 1 1 0;
+    }
+
+    @include tablet-large {
+      width: 25%;
+      flex: 1 1 auto;
+    }
+
+    .address-area {
+      margin-top: 2rem;
+
       @include tablet-small {
-        flex: 1 1 0;
+        margin-top: 0;
       }
 
       @include tablet-large {
         display: flex;
-        flex: 1 1 auto;
-      }
-
-      .location {
-        display: block;
-        font-family: ApercuMonoPro;
-        font-size: .9375rem;
-        text-transform: uppercase;
-        color: $color-point;
-
-        @include tablet-large {
-          margin-bottom: 1.25rem;
-          width: 100%;
-        }
+        flex-direction: column;
       }
     }
 
-    .inner1 {
-
-      @include tablet-large {
-        width: 75%;
-        flex-wrap: wrap;
-      }
-
-      .address-area {
-        margin-top: 1.25rem;
-
-        @include tablet-large {
-          margin-top: 0.75rem;
-          max-width: 50%;
-          padding-right: 2.5rem;
-        }
-
-        @include desktop-large {
-          padding-right: 4rem;
-        }
-      }
-    }
-
-    .inner2 {
-      @include tablet-small {
-        flex: 1 1 0;
-      }
-
-      @include tablet-large {
-        width: 25%;
-        // flex-direction: column;
-        flex: 1 1 auto;
-      }
-
-      .address-area {
-        // margin-top: 2rem;
-
-        @include tablet-small {
-          // flex: 1 1 0;
-        }
-
-        @include tablet-large {
-          // margin-top: 2.5rem;
-          display: flex;
-          // width: 25%;
-          // flex: 1 1 auto;
-          flex-direction: column;
-        }
-      }
-
-      .title {
-        margin-top: 1.25rem;
-      }
+    .title {
+      margin-top: 1.25rem;
     }
   }
 
@@ -191,8 +258,6 @@
         color: $color-point;
       }
     }
-
-    .title {}
 
     .address {
       margin-top: 1rem;
@@ -219,8 +284,10 @@
 
     .address,
     .contact {
-      font-size: .8125rem;
-      font-weight: 300;
+      font: {
+        size: .8125rem;
+        weight: 300;
+      }
 
       @include tablet-large {
         margin-top: 1.25rem;
@@ -232,23 +299,35 @@
   .group-connect {
     display: flex;
     flex-wrap: wrap;
-    font-size: .8125rem;
-    font-weight: 300;
-    margin-top: 4rem;
+    font: {
+      size: .8125rem;
+      weight: 300;
+    }
+    order: 6;
 
     @include tablet-small {
       order: 6;
-      width: 100%;
       align-items: baseline;
       justify-content: space-between;
+      width: 100%;
     }
 
     @include tablet-large {
       font-size: .9375rem;
-      margin-top: 5rem;
     }
 
-    &>div {}
+    @include desktop-small {
+      width: 66%;
+    }
+  }
+
+  .connect-area,
+  .corp-list {
+    margin-top: 4rem;
+
+    @include tablet-large {
+      margin-top: 5rem;
+    }
   }
 
   .connect-area {
@@ -280,11 +359,38 @@
 
   .corp-list {
     display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    @include tablet-small {
+      flex-wrap: nowrap;
+      justify-content: space-between;
+    }
+
+    @include tablet-large {
+      width: 76%;
+    }
   }
 
   .corp-item {
+    &.north {
+      width: 100%;
+      order: -1;
+      margin-bottom: 1.5rem;
+
+      @include tablet-small {
+        width: auto;
+        order: 0;
+        margin-bottom: 0;
+      }
+    }
+
     &+.corp-item {
-      margin-left: 40px;
+      margin-left: auto;
+
+      @include tablet-small {
+        margin-left: 0;
+      }
     }
   }
 
@@ -298,33 +404,32 @@
   }
 
   .column-right {
-    &>div {
+    margin-top: 4rem;
 
-      @include tablet-small {
-        width: 50%;
-      }
-
-      @include tablet-large {}
-
-      @include desktop-small {
-        position: absolute;
-        right: 8rem;
-        width: calc(34% - 12rem);
-      }
-
-      @include desktop-large {
-        right: 0;
-      }
-    }
-  }
-
-  .signup-area {
     @include tablet-small {
-      order: 3;
+      width: 50%;
     }
 
     @include tablet-large {
       margin-top: 5rem;
+    }
+
+    @include desktop-small {
+      position: absolute;
+      right: 8rem;
+      width: calc(34% - 12rem);
+    }
+
+    @include desktop-large {
+      right: 0;
+    }
+  }
+
+  .signup-area {
+    order: 3;
+
+    @include tablet-small {
+      order: 3;
     }
 
     @include desktop-small {
@@ -335,6 +440,7 @@
 
   .magnet-area {
     @include column(start);
+    order: 4;
 
     @include tablet-small {
       order: 4;
@@ -343,8 +449,10 @@
 
     @include desktop-small {
       bottom: 0;
-      margin-top: 0;
-      margin-bottom: 0.125rem;
+      margin: {
+        top: 0;
+        bottom: 0.125rem;
+      }
       padding-left: 0;
     }
 

@@ -36,8 +36,6 @@
       @include tablet-large {
         line-height: 1.125;
       }
-
-      .row {}
     }
   }
 
@@ -51,8 +49,10 @@
     border-radius: 110px;
     border: 2px solid $color-white;
     white-space: nowrap;
-    font-family: ApercuMonoPro;
-    font-size: .8125rem;
+    font: {
+      family: ApercuMonoPro;
+      size: .8125rem;
+    }
     text-transform: uppercase;
     line-height: 1.25;
     color: $color-white;
@@ -99,8 +99,6 @@
   position: relative;
   background: $color-white;
 
-  .common-inner {}
-
   .group-title {
     display: flex;
     flex-direction: column;
@@ -118,8 +116,10 @@
 
     @include tablet-large {
       flex: 1 1 0;
-      margin-top: 0px;
-      margin-left: 5rem;
+      margin: {
+        top: 0;
+        left: 5rem;
+      }
     }
 
     @include desktop-xsmall {
@@ -135,8 +135,6 @@
       }
     }
   }
-
-  .sc-title {}
 
   .floating-txt {
     order: 1;
@@ -198,8 +196,6 @@
 
     .sc-sub-title {
       @include column(start);
-
-      .row {}
     }
 
     .desc {
@@ -241,18 +237,25 @@
     align-items: center;
     font-size: 1.4375rem;
     line-height: 1.15;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+
+    padding: {
+      top: 0.5rem;
+      bottom: 0.5rem;
+    }
 
     @include tablet-large {
       font-size: 2.1875rem;
-      padding-top: 1rem;
-      padding-bottom: 1rem;
+      padding: {
+        top: 1rem;
+        bottom: 1rem; 
+      }
     }
 
     @include desktop-xsmall {
-      padding-top: 1.5rem;
-      padding-bottom: 1.5rem;
+      padding: {
+        top: 1.5rem;
+        bottom: 1.5rem;
+      }
     }
 
     svg {
@@ -270,9 +273,6 @@
 
   .group-value {
     order: 1;
-    // display: flex;
-    // flex-wrap: wrap;
-    // justify-content: space-between;
     display: grid;
     gap: 4rem;
     margin-bottom: 5rem;
@@ -289,8 +289,10 @@
   }
 
   .value-area {
-    font-family: CMGLano;
-    font-weight: 400;
+    font: {
+      family: CMGLano;
+      weight: 400;
+    }
 
     &:nth-child(n+3) {
       justify-self: auto;
@@ -308,10 +310,6 @@
       font-size: clamp(100px, 11vw, 205px);
       line-height: 1;
     }
-
-    .number {}
-
-    .unit {}
 
     .title {
       display: block;
@@ -334,10 +332,6 @@
     @include column(start);
   }
 
-  .sc-title {}
-
-  .sc-sub-title {}
-
   .client-list-wrap {
     &.pc {
       display: none;
@@ -347,15 +341,15 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-      
+
         @include tablet-large {
           margin-top: 5rem;
         }
-      
+
         @include desktop-xsmall {
           margin-top: 6rem;
         }
-      
+
         @include desktop-medium {
           margin-top: 10rem;
         }
@@ -376,6 +370,7 @@
       }
     }
   }
+
   .swiper {
     padding-bottom: 3rem;
 
@@ -416,13 +411,16 @@
     &.pc {
       display: none;
     }
+
     &.mobile {
       display: block;
     }
+
     @include tablet-large {
       &.pc {
         display: block;
       }
+
       &.mobile {
         display: none;
       }
@@ -442,23 +440,29 @@
       margin-bottom: 8rem;
     }
   }
+
   .study-area {
     .badge-wrap {
       display: flex;
       flex-wrap: wrap;
     }
+
     .badge {
       @include round-title($color-white, $color-white);
-      margin-bottom: 1rem;
-      margin-right: 1rem;
+      margin: {
+        bottom: 1rem;
+        right: 1rem;
+      }
     }
   }
 
   img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center;
+    object {
+      fit: cover;
+      position: center;
+    }
   }
 
   .content {
@@ -467,41 +471,41 @@
       .study-list {
         display: flex;
         flex-direction: column;
-    
+
         &:hover {
           .sc-sub-title {
             opacity: 0.5;
           }
         }
       }
-    
+
       .study-item {
         margin-bottom: 8rem;
-    
+
         &:hover {
-    
+
           .sc-sub-title {
             opacity: 1;
           }
-    
+
           .badge-wrap {
             opacity: 1;
             transform: translateX(0) scale(1);
           }
         }
       }
-    
+
       .study-area {
         position: relative;
         display: block;
         z-index: 1;
-    
+
         .sc-sub-title {
           max-width: 64rem;
           @include transition-opacity;
           transition-duration: 500ms;
         }
-    
+
         .badge-wrap {
           transform: translateX(0.5rem) scale(1);
           @include transition-all;
@@ -509,7 +513,7 @@
           opacity: 0;
         }
       }
-    
+
       .bg-area {
         position: absolute;
         left: 0;
@@ -522,11 +526,11 @@
         max-height: 937px;
         height: 937px;
         padding: 0px;
-    
+
         &.fixed {
           position: fixed;
         }
-    
+
         .bg {
           position: absolute;
           left: 0;
@@ -541,10 +545,14 @@
       .inner {
         position: relative;
         width: 100%;
-        margin-right: auto;
-        margin-left: auto;
-        padding-right: 2.5rem;
-        padding-left: 2.5rem;
+        margin: {
+          right: auto;
+          left: auto;
+        }
+        padding: {
+          right: 2.5rem;
+          left: 2.5rem;
+        }
       }
 
       .study-list-wrap {
@@ -552,7 +560,6 @@
       }
 
       .study-area {
-        display: block;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
@@ -564,11 +571,13 @@
           top: 0;
           left: 0;
         }
+
         .caption-box {
           padding-bottom: 2.5rem;
           color: $color-white;
           z-index: 1;
         }
+
         .sc-sub-title {
           margin-bottom: 1rem;
         }
@@ -577,14 +586,19 @@
           font-size: 0.625rem;
         }
       }
+
       .swiper-pagination {
         right: 1.5rem;
+
         &-bullet {
           display: block;
           opacity: 1;
-          margin-top: 1.5rem;
-          margin-bottom: 1.5rem;
+          margin: {
+            top: 1.5rem;
+            bottom: 1.5rem;
+          }
           background: $color-white;
+
           &-active {
             background: $color-point;
           }
@@ -597,28 +611,30 @@
 // insight
 .sc-insight {
   .title-area {
-    .common-inner {}
-
     .sc-sub-title {
       @include column(start);
-
-      .row {}
     }
   }
 
   .insight-list-wrap {
-    padding-bottom: 3rem;
-    padding-top: 3rem;
+    padding: {
+      bottom: 3rem;
+      top: 3rem;
+    }
 
     @include tablet-large {
-      padding-bottom: 6rem;
-      padding-top: 4rem;
-      padding-left: 18vw;
+      padding: {
+        bottom: 6rem;
+        top: 4rem;
+        left: 18vw;
+      }
     }
 
     @include desktop-xsmall {
-      padding-top: 6rem;
-      padding-left: 15vw;
+      padding: {
+        top: 6rem;
+        left: 15vw;
+      }
     }
 
     @include desktop-medium {
@@ -658,11 +674,15 @@
         width: 100%;
         height: 100%;
         min-height: 300px;
-        object-position: center;
-        object-fit: cover;
-        animation-name: fadeIn;
-        animation-fill-mode: both;
-        animation-duration: 1s;
+        object: {
+          position: center;
+          fit: cover;
+        }
+        animation: {
+          name: fadeIn;
+          fill-mode: both;
+          duration: 1s;
+        }
       }
     }
 
@@ -675,22 +695,28 @@
       align-items: flex-end;
       width: 100%;
       height: 100%;
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
-      padding-bottom: 3rem;
+      padding: {
+        left: 1.5rem;
+        right: 1.5rem;
+        bottom: 3rem;
+      }
       color: $color-white;
 
       @include tablet-large {
-        padding-left: 4rem;
-        padding-right: 4rem;
-        padding-bottom: 4rem;
+        padding: {
+          left: 4rem;
+          right: 4rem;
+          bottom: 4rem;
+        }
       }
     }
 
     .type {
       display: flex;
-      font-family: ApercuMonoPro;
-      font-size: 0.625rem;
+      font: {
+        family: ApercuMonoPro;
+        size: 0.625rem;
+      }
       text-transform: uppercase;
 
       @include tablet-large {
@@ -700,13 +726,17 @@
 
     .title {
       display: block;
-      margin-top: 1.25rem;
-      margin-bottom: 1.25rem;
+      margin: {
+        top: 1.25rem;
+        bottom: 1.25rem;
+      }
       font-size: 1.4375rem;
 
       @include tablet-large {
-        margin-top: 1.75rem;
-        margin-bottom: 1.75rem;
+        margin: {
+          top: 1.75rem;
+          bottom: 1.75rem;
+        }
         font-size: 2.1875rem;
       }
     }
