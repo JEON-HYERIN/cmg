@@ -18,7 +18,7 @@
   .title-area {
     position: absolute;
     bottom: 3.5rem;
-    transform: translateY(-50%);
+    // transform: translateY(-50%);
     z-index: 1;
 
     @include tablet-large {
@@ -49,10 +49,13 @@
     border-radius: 110px;
     border: 2px solid $color-white;
     white-space: nowrap;
+    display: none;
+
     font: {
       family: ApercuMonoPro;
       size: .8125rem;
     }
+
     text-transform: uppercase;
     line-height: 1.25;
     color: $color-white;
@@ -60,7 +63,7 @@
     display: none;
     z-index: 1;
 
-    @include tablet-large {
+    @include desktop-xsmall {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -88,7 +91,7 @@
     background: {
       image: url("../images/bg/visual_img.jpg");
       repeat: no-repeat;
-      position: 50% 16.2835px;
+      position: 50% 0px;
       size: cover;
     }
   }
@@ -116,6 +119,7 @@
 
     @include tablet-large {
       flex: 1 1 0;
+
       margin: {
         top: 0;
         left: 5rem;
@@ -245,9 +249,10 @@
 
     @include tablet-large {
       font-size: 2.1875rem;
+
       padding: {
         top: 1rem;
-        bottom: 1rem; 
+        bottom: 1rem;
       }
     }
 
@@ -407,6 +412,10 @@
 .sc-study {
   position: relative;
 
+  @media (max-width: $tablet-large) {
+    padding: 0 !important;
+  }
+
   .content {
     &.pc {
       display: none;
@@ -449,6 +458,7 @@
 
     .badge {
       @include round-title($color-white, $color-white);
+
       margin: {
         bottom: 1rem;
         right: 1rem;
@@ -459,10 +469,8 @@
   img {
     width: 100%;
     height: 100%;
-    object {
-      fit: cover;
-      position: center;
-    }
+    object-fit: cover;
+    object-position: center;
   }
 
   .content {
@@ -518,14 +526,11 @@
         position: absolute;
         left: 0;
         top: 0;
-        transform: translate(0px, 0px);
+        width: 100%;
+        height: 100%;
         inset: 0px auto auto 0px;
-        margin: 0px;
-        max-width: 1920px;
-        width: 1920px;
-        max-height: 937px;
-        height: 937px;
-        padding: 0px;
+        max-height: 850px;
+        height: 850px;
 
         &.fixed {
           position: fixed;
@@ -545,10 +550,12 @@
       .inner {
         position: relative;
         width: 100%;
+
         margin: {
           right: auto;
           left: auto;
         }
+
         padding: {
           right: 2.5rem;
           left: 2.5rem;
@@ -593,10 +600,12 @@
         &-bullet {
           display: block;
           opacity: 1;
+
           margin: {
             top: 1.5rem;
             bottom: 1.5rem;
           }
+
           background: $color-white;
 
           &-active {
@@ -674,10 +683,9 @@
         width: 100%;
         height: 100%;
         min-height: 300px;
-        object: {
-          position: center;
-          fit: cover;
-        }
+        object-position: center;
+        object-fit: cover;
+
         animation: {
           name: fadeIn;
           fill-mode: both;
@@ -695,11 +703,13 @@
       align-items: flex-end;
       width: 100%;
       height: 100%;
+
       padding: {
         left: 1.5rem;
         right: 1.5rem;
         bottom: 3rem;
       }
+
       color: $color-white;
 
       @include tablet-large {
@@ -713,10 +723,12 @@
 
     .type {
       display: flex;
+
       font: {
         family: ApercuMonoPro;
         size: 0.625rem;
       }
+
       text-transform: uppercase;
 
       @include tablet-large {
@@ -726,10 +738,12 @@
 
     .title {
       display: block;
+
       margin: {
         top: 1.25rem;
         bottom: 1.25rem;
       }
+
       font-size: 1.4375rem;
 
       @include tablet-large {
@@ -737,6 +751,7 @@
           top: 1.75rem;
           bottom: 1.75rem;
         }
+
         font-size: 2.1875rem;
       }
     }

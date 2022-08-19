@@ -448,7 +448,7 @@ body { font-family: CMGLano; font-size: 1rem; font-weight: 300; color: #333047; 
 
 .sc-visual .common-inner { height: 100%; }
 
-.sc-visual .title-area { position: absolute; bottom: 3.5rem; -webkit-transform: translateY(-50%); transform: translateY(-50%); z-index: 1; }
+.sc-visual .title-area { position: absolute; bottom: 3.5rem; z-index: 1; }
 
 @media (min-width: 1024px) { .sc-visual .title-area { bottom: 50%; -webkit-transform: translateY(50%); transform: translateY(50%); } }
 
@@ -456,13 +456,13 @@ body { font-family: CMGLano; font-size: 1rem; font-weight: 300; color: #333047; 
 
 @media (min-width: 1024px) { .sc-visual .title-area .title { line-height: 1.125; } }
 
-.sc-visual .btn-scroll { position: absolute; left: calc(50% - 55px); bottom: 40px; z-index: 0; width: 110px; height: 110px; border-radius: 110px; border: 2px solid #fff; white-space: nowrap; font-family: ApercuMonoPro; font-size: .8125rem; text-transform: uppercase; line-height: 1.25; color: #fff; cursor: default; display: none; z-index: 1; }
+.sc-visual .btn-scroll { position: absolute; left: calc(50% - 55px); bottom: 40px; z-index: 0; width: 110px; height: 110px; border-radius: 110px; border: 2px solid #fff; white-space: nowrap; display: none; font-family: ApercuMonoPro; font-size: .8125rem; text-transform: uppercase; line-height: 1.25; color: #fff; cursor: default; display: none; z-index: 1; }
 
-@media (min-width: 1024px) { .sc-visual .btn-scroll { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; } }
+@media (min-width: 1280px) { .sc-visual .btn-scroll { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; } }
 
 .sc-visual .btn-scroll svg { position: absolute; -webkit-transform: rotate(90deg) scale(1); transform: rotate(90deg) scale(1); width: 1rem; height: 1rem; bottom: 1.5rem; stroke: currentColor; }
 
-.sc-visual .bg-area { position: absolute; left: 0; top: 0; width: 100%; height: 100%; -webkit-transform: scale(1.075, 1.075); transform: scale(1.075, 1.075); background-image: url("../images/bg/visual_img.jpg"); background-repeat: no-repeat; background-position: 50% 16.2835px; background-size: cover; }
+.sc-visual .bg-area { position: absolute; left: 0; top: 0; width: 100%; height: 100%; -webkit-transform: scale(1.075, 1.075); transform: scale(1.075, 1.075); background-image: url("../images/bg/visual_img.jpg"); background-repeat: no-repeat; background-position: 50% 0px; background-size: cover; }
 
 .sc-intro { position: relative; background: #fff; }
 
@@ -573,6 +573,8 @@ body { font-family: CMGLano; font-size: 1rem; font-weight: 300; color: #333047; 
 
 .sc-study { position: relative; }
 
+@media (max-width: 1024px) { .sc-study { padding: 0 !important; } }
+
 .sc-study .content.pc { display: none; }
 
 .sc-study .content.mobile { display: block; }
@@ -590,9 +592,7 @@ body { font-family: CMGLano; font-size: 1rem; font-weight: 300; color: #333047; 
 
 @media (min-width: 1024px) { .sc-study .study-area .badge { font-size: .9375rem; } }
 
-.sc-study img { width: 100%; height: 100%; }
-
-.sc-study img object { fit: cover; position: center; }
+.sc-study img { width: 100%; height: 100%; -o-object-fit: cover; object-fit: cover; -o-object-position: center; object-position: center; }
 
 .sc-study .content.pc .study-list { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; }
 
@@ -610,7 +610,7 @@ body { font-family: CMGLano; font-size: 1rem; font-weight: 300; color: #333047; 
 
 .sc-study .content.pc .study-area .badge-wrap { -webkit-transform: translateX(0.5rem) scale(1); transform: translateX(0.5rem) scale(1); -webkit-transition-property: all; transition-property: all; -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); -webkit-transition-duration: 150ms; transition-duration: 150ms; -webkit-transition-duration: 500ms; transition-duration: 500ms; opacity: 0; }
 
-.sc-study .content.pc .bg-area { position: absolute; left: 0; top: 0; -webkit-transform: translate(0px, 0px); transform: translate(0px, 0px); inset: 0px auto auto 0px; margin: 0px; max-width: 1920px; width: 1920px; max-height: 937px; height: 937px; padding: 0px; }
+.sc-study .content.pc .bg-area { position: absolute; left: 0; top: 0; width: 100%; height: 100%; inset: 0px auto auto 0px; max-height: 850px; height: 850px; }
 
 .sc-study .content.pc .bg-area.fixed { position: fixed; }
 
