@@ -136,6 +136,10 @@ span {
   display: inline-block;
 }
 
+span.row {
+  overflow: hidden;
+}
+
 section,
 #footer {
   padding: {
