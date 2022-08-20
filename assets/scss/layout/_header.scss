@@ -41,6 +41,10 @@
     @include transition;
     transition-duration: 300ms;
 
+    &.switch {
+      color: $color-navy;
+    }
+
     @include tablet-large {
       width: 99px;
       height: 31px;

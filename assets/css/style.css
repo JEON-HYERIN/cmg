@@ -70,15 +70,15 @@ div[class*="inner"] { position: relative; margin: 0 auto; }
 
 span { display: inline-block; }
 
-section[class^="sc-"], #footer { padding-top: 5rem; padding-bottom: 5rem; }
+section, #footer { padding-top: 5rem; padding-bottom: 5rem; }
 
-@media (min-width: 1280px) { section[class^="sc-"], #footer { padding-top: 10rem; padding-bottom: 10rem; } }
+@media (min-width: 1280px) { section, #footer { padding-top: 10rem; padding-bottom: 10rem; } }
 
-@media (min-width: 1536px) { section[class^="sc-"], #footer { padding-top: 12rem; padding-bottom: 12rem; } }
+@media (min-width: 1536px) { section, #footer { padding-top: 12rem; padding-bottom: 12rem; } }
 
-section[class^="sc-"].full, #footer.full { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; min-height: 80vh; }
+section.full, #footer.full { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; min-height: 80vh; }
 
-@media (min-width: 1280px) { section[class^="sc-"].full, #footer.full { min-height: 100vh; } }
+@media (min-width: 1280px) { section.full, #footer.full { min-height: 100vh; } }
 
 .thumb-dim { position: relative; }
 
@@ -159,6 +159,8 @@ body { font-family: CMGLano; font-size: 1rem; font-weight: 300; color: #333047; 
 @media (min-width: 1024px) { #header .logo-area { margin-left: 0px; } }
 
 #header .logo { width: 84px; height: 26px; color: #fff; transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter; -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); -webkit-transition-duration: 150ms; transition-duration: 150ms; -webkit-transition-duration: 300ms; transition-duration: 300ms; }
+
+#header .logo.switch { color: #333047; }
 
 @media (min-width: 1024px) { #header .logo { width: 99px; height: 31px; } }
 
@@ -442,7 +444,7 @@ body { font-family: CMGLano; font-size: 1rem; font-weight: 300; color: #333047; 
 
 .swiper-pagination.default .swiper-pagination-bullet-active { background-color: #333047; }
 
-.sc-visual { position: relative; height: 67vh; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; overflow: hidden; padding: 0 !important; }
+.sc-visual { position: relative; height: 67vh; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; overflow: hidden; padding: 0; }
 
 @media (orientation: landscape) { .sc-visual { height: 100vh; } }
 
@@ -462,7 +464,9 @@ body { font-family: CMGLano; font-size: 1rem; font-weight: 300; color: #333047; 
 
 .sc-visual .btn-scroll svg { position: absolute; -webkit-transform: rotate(90deg) scale(1); transform: rotate(90deg) scale(1); width: 1rem; height: 1rem; bottom: 1.5rem; stroke: currentColor; }
 
-.sc-visual .bg-area { position: absolute; left: 0; top: 0; width: 100%; height: 100%; -webkit-transform: scale(1.075, 1.075); transform: scale(1.075, 1.075); background-image: url("../images/bg/visual_img.jpg"); background-repeat: no-repeat; background-position: 50% 0px; background-size: cover; }
+.sc-visual .bg-area { position: absolute; left: 0; top: 0; width: 100%; height: 100%; -webkit-transform: scale(1.075, 1.075); transform: scale(1.075, 1.075); background-image: url("../images/bg/visual_img_mobile.jpg"); background-repeat: no-repeat; background-position: 50% 0; background-size: cover; }
+
+@media (min-width: 768px) { .sc-visual .bg-area { background-image: url("../images/bg/visual_img.jpg"); } }
 
 .sc-intro { position: relative; background: #fff; }
 
@@ -482,11 +486,15 @@ body { font-family: CMGLano; font-size: 1rem; font-weight: 300; color: #333047; 
 
 .sc-intro .floating-txt { -webkit-box-ordinal-group: 2; -ms-flex-order: 1; order: 1; -ms-flex-item-align: center; align-self: center; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; width: 295px; height: 295px; padding: 70px; border-radius: 50%; background: #d9f252; }
 
+.sc-intro .floating-txt.opacity { opacity: 0; -webkit-transition: opacity .3s; transition: opacity .3s; }
+
+.sc-intro .floating-txt.opacity.fadein { opacity: 1; }
+
 @media (min-width: 1280px) { .sc-intro .floating-txt { width: 400px; height: 400px; padding: 90px; } }
 
-.sc-intro .floating-txt .desc { text-align: center; font-size: 1.4375rem; }
+.sc-intro .floating-txt .motto { text-align: center; font-size: 1.4375rem; }
 
-@media (min-width: 1280px) { .sc-intro .floating-txt .desc { font-size: 2.1875rem; } }
+@media (min-width: 1280px) { .sc-intro .floating-txt .motto { font-size: 2.1875rem; } }
 
 .sc-whatwedo { position: relative; color: #fff; background-color: #006e6e; z-index: 1; }
 
@@ -571,9 +579,9 @@ body { font-family: CMGLano; font-size: 1rem; font-weight: 300; color: #333047; 
 
 .client-item .logo { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
 
-.sc-study { position: relative; }
+.sc-study { position: relative; padding-bottom: 0; }
 
-@media (max-width: 1024px) { .sc-study { padding: 0 !important; } }
+@media (max-width: 1024px) { .sc-study { padding: 0; } }
 
 .sc-study .content.pc { display: none; }
 
@@ -610,9 +618,7 @@ body { font-family: CMGLano; font-size: 1rem; font-weight: 300; color: #333047; 
 
 .sc-study .content.pc .study-area .badge-wrap { -webkit-transform: translateX(0.5rem) scale(1); transform: translateX(0.5rem) scale(1); -webkit-transition-property: all; transition-property: all; -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); -webkit-transition-duration: 150ms; transition-duration: 150ms; -webkit-transition-duration: 500ms; transition-duration: 500ms; opacity: 0; }
 
-.sc-study .content.pc .bg-area { position: absolute; left: 0; top: 0; width: 100%; height: 100%; inset: 0px auto auto 0px; max-height: 850px; height: 850px; }
-
-.sc-study .content.pc .bg-area.fixed { position: fixed; }
+.sc-study .content.pc .bg-area { position: absolute; left: 0; top: 0; width: 100%; height: 100vh; inset: 0px auto auto 0px; background: #d9f252; }
 
 .sc-study .content.pc .bg-area .bg { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
 
@@ -648,7 +654,7 @@ body { font-family: CMGLano; font-size: 1rem; font-weight: 300; color: #333047; 
 
 @media (min-width: 1920px) { .sc-insight .insight-list-wrap { padding-left: 23vw; } }
 
-.sc-insight .insight-list { -webkit-transition-timing-function: ease-out; transition-timing-function: ease-out; margin: 0 auto; }
+.sc-insight .insight-list { margin: 0 auto; }
 
 @media (min-width: 640px) { .sc-insight .insight-item { max-width: 460px; } }
 
@@ -690,7 +696,11 @@ body { font-family: CMGLano; font-size: 1rem; font-weight: 300; color: #333047; 
 
 .btn-cookie:hover .ico-cookie svg { fill: #fff; }
 
-.obj-circle { position: fixed; top: calc(50% - 281px); left: calc(50% - 281px); width: 562px; height: 562px; z-index: 0; pointer-events: none; }
+.obj-circle { position: fixed; top: calc(50% - 281px); left: calc(50% - 281px); width: 562px; height: 562px; z-index: 0; opacity: 1; visibility: inherit; pointer-events: none; display: none; }
+
+.obj-circle.fadeout { opacity: 0; visibility: hidden; }
+
+@media (min-width: 1280px) { .obj-circle { display: block; } }
 
 .obj-circle svg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; fill: currentColor; }
 
