@@ -4,19 +4,50 @@ $(function(){
     e.preventDefault();
   });
 
-  // header logo
-  $('section.white').each(function(index, el){
-    ScrollTrigger.create({
-      trigger: el,
-      start: 'top top', 
-      end: 'bottom top',
-      // markers: true,
-      scrub: 1,
-      toggleClass: {
-        targets: '#header .logo',
-        className: 'switch'
-      }
-    })
+  // header logo and obj-circle
+  toggleClass();
+
+  $(window).on('scroll resize', function() {
+    toggleClass();
+  });
+
+  function toggleClass() {
+    let windowWidth = $(window).width();
+    let lastScroll = 0;
+    const currentScroll = $(this).scrollTop();
+    const scIntro = $('.sc-intro').offset().top;
+  
+    if ((currentScroll > lastScroll) && (windowWidth < 1440)) {
+      $('#header .logo').addClass('fadeout');
+    } else {
+      $('#header .logo').removeClass('fadeout');
+    }
+
+    if((windowWidth >= 1280) && (currentScroll >= scIntro + $(window).height())) {
+      $('#obj-circle').addClass('fadeout');
+    } else {
+      $('#obj-circle').removeClass('fadeout');
+    }
+    lastScroll = currentScroll;
+  }
+
+  ScrollTrigger.matchMedia({
+    "(min-width: 1440px)": function(){
+      // desktop-small
+      $('section.white').each(function(index, el){
+        ScrollTrigger.create({
+          trigger: el,
+          start: 'top top', 
+          end: 'bottom top',
+          // markers: true,
+          scrub: 1,
+          toggleClass: {
+            targets: '#header .logo',
+            className: 'switch'
+          }
+        })
+      });
+    }
   });
 
   // btn nav
@@ -30,11 +61,9 @@ $(function(){
         const anim = gsap.fromTo(element, {
           opacity:0,
           x: '1rem',
-          visibility: 'hidden',
         }, {
           x: 0,
           opacity:1,
-          visibility: 'inherit',
           delay: (index + 1) * .2,
           duration: 0.25
         });
@@ -119,11 +148,9 @@ $(function(){
     const anim = gsap.fromTo(element, {
       opacity:0,
       y: 70,
-      visibility: 'hidden',
     }, {
       y: 0,
       opacity:1,
-      visibility: 'inherit',
       delay: (index + 1) * .2,
     });
     ScrollTrigger.create({
@@ -136,41 +163,33 @@ $(function(){
   });
 
   // intro
-  toggleClass();
-
-  $(window).resize(function(){
-    toggleClass();
-  });
-
-  function toggleClass() {
-    let windowWidth = $(window).width();
-    if (windowWidth >= 1024) {
-      $('.sc-intro .floating-txt').addClass('opacity');
-    } else {
-      $('.sc-intro .floating-txt').removeClass('opacity');
-    }
-  }
-
   ScrollTrigger.saveStyles('.sc-intro .floating-txt');
   ScrollTrigger.matchMedia({
     "(min-width: 1024px)": function(){
       // tablet-large
-      gsap.fromTo('.sc-intro .floating-txt.opacity', {
+      gsap.fromTo('.sc-intro .floating-txt', {
+        opacity: 0
+      }, {
+          scrollTrigger: {
+          trigger: '.sc-intro',
+          start: 'top 50%',
+          end: 'top 25%',
+          scrub: true,
+          // markers: true,
+        },
+        opacity: 1
+      });
+      gsap.fromTo('.sc-intro .floating-txt', {
         yPercent: -50,
       }, {
           scrollTrigger: {
           trigger: '.sc-intro',
-          start: '0% 60%', 
-          end: '100% -20%',
+          start: 'top center', 
           scrub: true,
           // markers: true,
-          toggleClass: {
-            targets: '.sc-intro .floating-txt.opacity',
-            className: 'fadein'
-          }
         },
         yPercent: 100,
-        duration: 3,
+        ease: 'none'
       });
     }
   });
@@ -200,21 +219,19 @@ $(function(){
         }
       })
       tlWhatwedo.addLabel('t1')
-      .fromTo('.sc-whatwedo .sc-title',{opacity:0, y:70, visibility: 'hidden'},{opacity:1, y:0, visibility: 'inherit'},'t1')
-      .fromTo('.sc-whatwedo .sc-sub-title .txt1',{opacity:0, y:70, visibility: 'hidden'},{opacity:1, y:0, visibility: 'inherit'},'t1+=.2')
-      .fromTo('.sc-whatwedo .sc-sub-title .txt2',{opacity:0, y:70, visibility: 'hidden'},{opacity:1, y:0, visibility: 'inherit'},'t1+=.4')
-      .fromTo('.sc-whatwedo .sc-sub-title .txt3',{opacity:0, y:70, visibility: 'hidden'},{opacity:1, y:0, visibility: 'inherit'},'t1+=.6')
-      .fromTo('.sc-whatwedo .title-area .desc',{opacity:0, y:70, visibility: 'hidden'},{opacity:1, y:0, visibility: 'inherit'},'t1+=.8')
+      .fromTo('.sc-whatwedo .sc-title',{opacity:0, y:70},{opacity:1, y:0},'t1')
+      .fromTo('.sc-whatwedo .sc-sub-title .txt1',{opacity:0, y:70},{opacity:1, y:0},'t1+=.2')
+      .fromTo('.sc-whatwedo .sc-sub-title .txt2',{opacity:0, y:70},{opacity:1, y:0},'t1+=.4')
+      .fromTo('.sc-whatwedo .sc-sub-title .txt3',{opacity:0, y:70},{opacity:1, y:0},'t1+=.6')
+      .fromTo('.sc-whatwedo .title-area .desc',{opacity:0, y:70},{opacity:1, y:0},'t1+=.8')
     
       $('.sc-whatwedo .whatwedo-item').each(function(index, element) {
         const anim = gsap.fromTo(element, {
           opacity:0,
           y: 70,
-          visibility: 'hidden',
         }, {
           y: 0,
           opacity:1,
-          visibility: 'inherit',
           delay: (index + 1) * .2,
         });
         ScrollTrigger.create({
@@ -239,21 +256,19 @@ $(function(){
         }
       })
       tlWhatwedo.addLabel('t1')
-      .fromTo('.sc-whatwedo .sc-title',{opacity:0, y:70, visibility: 'hidden'},{opacity:1, y:0, visibility: 'inherit'},'t1')
-      .fromTo('.sc-whatwedo .sc-sub-title .txt1',{opacity:0, y:70, visibility: 'hidden'},{opacity:1, y:0, visibility: 'inherit'},'t1+=.2')
-      .fromTo('.sc-whatwedo .sc-sub-title .txt2',{opacity:0, y:70, visibility: 'hidden'},{opacity:1, y:0, visibility: 'inherit'},'t1+=.4')
-      .fromTo('.sc-whatwedo .sc-sub-title .txt3',{opacity:0, y:70, visibility: 'hidden'},{opacity:1, y:0, visibility: 'inherit'},'t1+=.6')
-      .fromTo('.sc-whatwedo .title-area .desc',{opacity:0, y:70, visibility: 'hidden'},{opacity:1, y:0, visibility: 'inherit'},'t1+=.8')
+      .fromTo('.sc-whatwedo .sc-title',{opacity:0, y:70},{opacity:1, y:0},'t1')
+      .fromTo('.sc-whatwedo .sc-sub-title .txt1',{opacity:0, y:70},{opacity:1, y:0},'t1+=.2')
+      .fromTo('.sc-whatwedo .sc-sub-title .txt2',{opacity:0, y:70},{opacity:1, y:0},'t1+=.4')
+      .fromTo('.sc-whatwedo .sc-sub-title .txt3',{opacity:0, y:70},{opacity:1, y:0},'t1+=.6')
+      .fromTo('.sc-whatwedo .title-area .desc',{opacity:0, y:70},{opacity:1, y:0},'t1+=.8')
     
       $('.sc-whatwedo .whatwedo-item').each(function(index, element) {
         const anim = gsap.fromTo(element, {
           opacity:0,
           y: 70,
-          visibility: 'hidden',
         }, {
           y: 0,
           opacity:1,
-          visibility: 'inherit',
           delay: (index + 1) * .2,
         });
         ScrollTrigger.create({
@@ -280,18 +295,16 @@ $(function(){
     }
   })
   tlClient.addLabel('t1')
-  .fromTo('.sc-client .sc-title',{opacity:0, y:70, visibility: 'hidden'},{opacity:1, y:0, visibility: 'inherit'},'t1')
-  .fromTo('.sc-client .sc-sub-title',{opacity:0, y:70, visibility: 'hidden'},{opacity:1, y:0, visibility: 'inherit'},'t1+=.2')
+  .fromTo('.sc-client .sc-title',{opacity:0, y:70},{opacity:1, y:0},'t1')
+  .fromTo('.sc-client .sc-sub-title',{opacity:0, y:70},{opacity:1, y:0},'t1+=.2')
 
   $('.sc-client .client-item').each(function(index, element) {
     const anim = gsap.fromTo(element, {
       opacity:0,
       y: 70,
-      visibility: 'hidden',
     }, {
       y: 0,
       opacity:1,
-      visibility: 'inherit',
       // delay: (index + 1) * .2,
     });
     ScrollTrigger.create({
@@ -366,11 +379,9 @@ $(function(){
         const anim = gsap.fromTo(element, {
           opacity:0,
           x: '1rem',
-          visibility: 'hidden',
         }, {
           opacity:1,
           x: 0,
-          visibility: 'inherit',
           // delay: (index + 1) * .2,
         });
         ScrollTrigger.create({
@@ -386,15 +397,13 @@ $(function(){
       const animStudy = gsap.fromTo('.sc-study .sc-title', {
         opacity:0,
         x: '1rem',
-        visibility: 'hidden',
       }, {
         opacity:1,
         x: 0,
-        visibility: 'inherit',
       });
       ScrollTrigger.create({
         trigger: '.sc-study',
-        start:'top 60%',
+        start:'top 50%',
         animation: animStudy,
         toggleActions: 'play none none none',
         // play pause resume reset
@@ -416,9 +425,9 @@ $(function(){
     }
   })
   tlInsight.addLabel('t1')
-  .fromTo('.sc-insight .sc-sub-title .txt1',{opacity:0, y:70, visibility: 'hidden'},{opacity:1, y:0, visibility: 'inherit'},'t1')
-  .fromTo('.sc-insight .sc-sub-title .txt2',{opacity:0, y:70, visibility: 'hidden'},{opacity:1, y:0, visibility: 'inherit'},'t1+=.2')
-  .fromTo('.sc-insight .insight-list-wrap',{opacity:0, y:70, visibility: 'hidden'},{opacity:1, y:0, visibility: 'inherit'},'t1+=.4')
+  .fromTo('.sc-insight .sc-sub-title .txt1',{opacity:0, y:70},{opacity:1, y:0},'t1')
+  .fromTo('.sc-insight .sc-sub-title .txt2',{opacity:0, y:70},{opacity:1, y:0},'t1+=.2')
+  .fromTo('.sc-insight .insight-list-wrap',{opacity:0, y:70},{opacity:1, y:0},'t1+=.4')
 
   const insightSwiper = new Swiper('.sc-insight .insight-list-wrap.swiper', {
     slidesPerView: 1.4,
@@ -451,11 +460,9 @@ $(function(){
   const animFoot = gsap.fromTo('.footer-title', {
     opacity:0,
     yPercent: 100,
-    visibility: 'hidden',
   }, {
     yPercent: 0,
     opacity:1,
-    visibility: 'inherit',
   });
   ScrollTrigger.create({
     trigger: '#footer',
@@ -509,15 +516,3 @@ ScrollTrigger.matchMedia({
     })
   }
 });
-
-$(window).scroll(function(){
-  const currentScroll = $(this).scrollTop();
-
-  const scIntro = $('.sc-intro').offset().top;
-
-  if(currentScroll >= scIntro + $(window).height()) {
-    $('#obj-circle').addClass('fadeout');
-  } else {
-    $('#obj-circle').removeClass('fadeout');
-  }
-})
