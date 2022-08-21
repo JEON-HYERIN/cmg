@@ -82,7 +82,11 @@
     pointer-events: auto;
 
     &:hover {
-      background-color: #006e6e;
+      background-color: $color-green;
+
+      .line {
+        background: $color-white;
+      }
     }
 
     @include tablet-large {
@@ -130,7 +134,7 @@
       left: 0;
       width: 100%;
       height: 1px;
-      background-color: #333047;
+      background-color: $color-navy;
       @include transition;
       transition-duration: 300ms;
 
@@ -160,7 +164,7 @@
   width: 100%;
   height: 100%;
   @include column(null);
-  background-color: #006e6e;
+  background-color: $color-green;
   padding: 7rem 2.5rem 4rem;
   clip-path: circle(0 at calc(100% - 3rem) 3rem);
   transition: clip-path .5s, -webkit-clip-path .5s;
@@ -221,10 +225,12 @@
     font-size: clamp(30px, 3vw, 55px);
     line-height: 1.25;
     color: $color-white;
+
     padding: {
       top: 0.5rem;
       bottom: 0.5rem;
     }
+
     @include transition-transparency;
 
     @include tablet-large {

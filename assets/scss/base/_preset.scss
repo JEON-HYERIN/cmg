@@ -11,6 +11,28 @@ svg {
   display: block;
 }
 
+::-moz-selection {
+  background-color: $color-green;
+  color: $color-white;
+}
+
+::selection {
+  background-color: $color-green;
+  color: $color-white;
+}
+
+.bg-switch ::-moz-selection,
+.bg-switch>* ::-moz-selection {
+  background-color: $color-point;
+  color: $color-navy;
+}
+
+.bg-switch ::selection,
+.bg-switch>* ::selection {
+  background-color: $color-point;
+  color: $color-navy;
+}
+
 #wrapper {
   min-width: 320px;
 }
@@ -64,6 +86,7 @@ div[class*="inner"] {
 
 .common-inner {
   width: 100%;
+
   padding: {
     right: 2.5rem;
     left: 2.5rem;
@@ -79,6 +102,7 @@ div[class*="inner"] {
 
   @include tablet-large {
     max-width: 1024px;
+
     padding: {
       right: 6rem;
       left: 6rem;
@@ -99,6 +123,7 @@ div[class*="inner"] {
 
   @include desktop-medium {
     max-width: 1536px;
+
     padding: {
       right: 10rem;
       left: 10rem;
@@ -144,7 +169,7 @@ section,
 #footer {
   padding: {
     top: 5rem;
-    bottom: 5rem; 
+    bottom: 5rem;
   }
 
   @include desktop-xsmall {
@@ -205,10 +230,12 @@ section,
 
   .title {
     margin-right: 1rem;
+
     font: {
       size: .9375rem;
       weight: 300;
     }
+
     line-height: 1;
     color: $color-white;
     white-space: nowrap;
@@ -255,18 +282,22 @@ section,
 
   .input-email {
     width: 100%;
+
     font: {
       family: CMGLano;
       size: 1.125rem;
       weight: 300;
     }
+
     line-height: 1.25;
     color: $color-white;
     margin-top: 0.75rem;
+
     padding: {
       top: 0.5rem;
       bottom: 0.5rem;
     }
+
     border-bottom: 1px solid $color-white;
     outline: 2px solid transparent;
     outline-offset: 2px;
@@ -283,6 +314,11 @@ section,
 
   .btn-send {
     margin-top: 1rem;
+
+    &:hover {
+      background: $color-white;
+      color: $color-navy;
+    }
 
     @include tablet-large {
       margin-top: 1.5rem;
