@@ -12,9 +12,9 @@ $(function(){
   });
 
   function toggleClass() {
-    let windowWidth = $(window).width();
     let lastScroll = 0;
     const currentScroll = $(this).scrollTop();
+    const windowWidth = $(window).width();
     const scIntro = $('.sc-intro').offset().top;
   
     if ((currentScroll > lastScroll) && (windowWidth < 1440)) {
@@ -206,6 +206,78 @@ $(function(){
   .fromTo('.sc-intro .title-area .desc',{opacity:0, x:70},{opacity:1, x:0},'t1+=.2')
 
   // whatwedo
+
+  var startCount = {var: 0};
+  
+  gsap.to(startCount, {
+    var: 200, 
+    ease:'none',
+    // duration: 1,
+    onUpdate: function(){
+      changeNumber(number1);
+    },
+    scrollTrigger: {
+      trigger: "#number1",
+      start:'top 100%',
+    },
+  })
+  gsap.to(startCount, {
+    var: 250, 
+    ease:'none',
+    onUpdate: function(){
+      changeNumber(number2);
+    },
+    scrollTrigger: {
+      trigger: "#number2",
+      start:'top 100%',
+    },
+  })
+  gsap.to(startCount, {
+    var: 50, 
+    ease:'none',
+    onUpdate: function(){
+      changeNumber(number3);
+    },
+    scrollTrigger: {
+      trigger: "#number3",
+      start:'top 100%',
+    },
+  })
+  gsap.to(startCount, {
+    var: 78, 
+    ease:'none',
+    onUpdate: function(){
+      changeNumber(number4);
+    },
+    scrollTrigger: {
+      trigger: "#number4",
+      start:'top 100%',
+    },
+  })
+  function changeNumber(selector) {
+    selector.innerHTML = (startCount.var).toFixed();
+  }
+
+  $('.sc-whatwedo .value-area .title').each(function(index, element) {
+    const anim = gsap.fromTo(element, {
+      opacity:0,
+      x: 70,
+    }, {
+      x: 0,
+      opacity:1,
+      // delay: (index + 1) * .2,
+    });
+    ScrollTrigger.create({
+      trigger: element,
+      start:'top 100%',
+      animation: anim,
+      toggleActions: 'play none none none',
+      // play pause resume reset
+      once: true,
+      // markers: true
+    });
+  });
+
   ScrollTrigger.matchMedia({
     "(min-width: 1024px)": function(){
       const tlWhatwedo = gsap.timeline({
