@@ -314,33 +314,40 @@ $(function(){
   });
 
   // study
-  gsap.to('.sc-study .content.pc .bg-area',{
-    scrollTrigger: {
-      trigger: '.sc-study .content.pc .bg-area',
-      start: '0% 0%',
-      end: '100% 50%',
-      scrub: 7,
-      pin: true,
-      // markers: true,
-    },
-    duration: 4
+  ScrollTrigger.saveStyles('.sc-study .content.pc .bg-area');
+  ScrollTrigger.matchMedia({
+    "(min-width: 1024px)": function(){
+      // tablet-large
+      gsap.to('.sc-study .content.pc .bg-area',{
+        scrollTrigger: {
+          trigger: '.sc-study .content.pc .bg-area',
+          endTrigger: '.sc-study',
+          start: '0% 0%',
+          end: '100% 100%',
+          scrub: 7,
+          pin: true,
+          // markers: true,
+        },
+        duration: 4
+      });
+
+      const op = gsap.timeline({
+        scrollTrigger:{
+          trigger:'.sc-study .content.pc .bg-area',
+          start:"top top",
+          end: '+=50%',
+          // markers:true,
+          scrub:1,
+        },
+      })
+    
+      op.addLabel('m1')
+      // .fromTo('.sc-study .bg2',{opacity:0},{opacity:1},'m1+=1')
+      // .fromTo('.sc-study .bg3',{opacity:0},{opacity:1},'m1+=2')
+      .fromTo('.sc-study .bg2',{display: 'none', opacity: 0},{display: 'block', opacity: 1},'m1+=1')
+      .fromTo('.sc-study .bg3',{display: 'none', opacity: 0},{display: 'block', opacity: 1},'m1+=2')
+    }
   });
-
-  const op = gsap.timeline({
-    scrollTrigger:{
-      trigger:'.sc-study .content.pc .bg-area',
-      start:"top top",
-      end: '+=50%',
-      // markers:true,
-      scrub:1,
-    },
-  })
-
-  op.addLabel('m1')
-  // .fromTo('.sc-study .bg2',{opacity:0},{opacity:1},'m1+=1')
-  // .fromTo('.sc-study .bg3',{opacity:0},{opacity:1},'m1+=2')
-  .fromTo('.sc-study .bg2',{display: 'none', opacity: 0},{display: 'block', opacity: 1},'m1+=1')
-  .fromTo('.sc-study .bg3',{display: 'none', opacity: 0},{display: 'block', opacity: 1},'m1+=2')
 
   const studySwiper = new Swiper('.sc-study .study-list-wrap.swiper', {
     direction: 'vertical',
@@ -411,7 +418,7 @@ $(function(){
   tlInsight.addLabel('t1')
   .fromTo('.sc-insight .sc-sub-title .txt1',{opacity:0, y:70, visibility: 'hidden'},{opacity:1, y:0, visibility: 'inherit'},'t1')
   .fromTo('.sc-insight .sc-sub-title .txt2',{opacity:0, y:70, visibility: 'hidden'},{opacity:1, y:0, visibility: 'inherit'},'t1+=.2')
-  .fromTo('.sc-insight .insight-list',{opacity:0, y:100, visibility: 'hidden'},{opacity:1, y:0, visibility: 'inherit'},'t1+=.4')
+  .fromTo('.sc-insight .insight-list-wrap',{opacity:0, y:70, visibility: 'hidden'},{opacity:1, y:0, visibility: 'inherit'},'t1+=.4')
 
   const insightSwiper = new Swiper('.sc-insight .insight-list-wrap.swiper', {
     slidesPerView: 1.4,
@@ -422,8 +429,19 @@ $(function(){
       clickable: true
     },
     breakpoints: {
+      640: {
+        slidesPerView: 'auto'
+      },
       1024: {
-        slidesPerView: 'auto',
+        slidesPerView: 1.6,
+        centeredSlides: false
+      },
+      1280: {
+        slidesPerView: 2.2,
+        centeredSlides: false,
+      },
+      1540: {
+        slidesPerView: 2.8,
         centeredSlides: false,
       }
     }

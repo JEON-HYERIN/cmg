@@ -581,17 +581,15 @@ body { font-family: CMGLano; font-size: 1rem; font-weight: 300; color: #333047; 
 
 .client-item .logo { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
 
-.sc-study { padding-bottom: 0; }
+.sc-study { padding: 0; }
 
 @media (min-width: 1024px) { .sc-study { position: relative; } }
-
-@media (max-width: 1024px) { .sc-study { padding: 0; } }
 
 .sc-study .content.pc { display: none; }
 
 .sc-study .content.mobile { display: block; }
 
-@media (min-width: 1024px) { .sc-study .content.pc { display: block; position: relative; }
+@media (min-width: 1024px) { .sc-study .content.pc { display: block; }
   .sc-study .content.mobile { display: none; } }
 
 .sc-study .sc-title { position: absolute; top: 5rem; z-index: 2; color: #fff; margin-bottom: 0; }
@@ -605,6 +603,8 @@ body { font-family: CMGLano; font-size: 1rem; font-weight: 300; color: #333047; 
 @media (min-width: 1024px) { .sc-study .study-area .badge { font-size: .9375rem; } }
 
 .sc-study img { width: 100%; height: 100%; -o-object-fit: cover; object-fit: cover; -o-object-position: center; object-position: center; }
+
+@media (min-width: 1024px) { .sc-study .content.pc .group-title { padding-top: 8rem; } }
 
 .sc-study .content.pc .study-list { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; }
 
@@ -622,7 +622,7 @@ body { font-family: CMGLano; font-size: 1rem; font-weight: 300; color: #333047; 
 
 .sc-study .content.pc .study-area .badge-wrap { -webkit-transform: translateX(0.5rem) scale(1); transform: translateX(0.5rem) scale(1); -webkit-transition-property: all; transition-property: all; -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); -webkit-transition-duration: 150ms; transition-duration: 150ms; -webkit-transition-duration: 500ms; transition-duration: 500ms; opacity: 0; }
 
-.sc-study .content.pc .bg-area { position: absolute; left: 0; top: 0; width: 100%; height: 100vh; inset: 0px auto auto 0px; background: #d9f252; }
+.sc-study .content.pc .bg-area { position: absolute; left: 0; top: 0; width: 100%; height: 100vh; background: #d9f252; }
 
 .sc-study .content.pc .bg-area .bg { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
 

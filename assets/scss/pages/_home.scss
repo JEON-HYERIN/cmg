@@ -426,16 +426,12 @@
 
 // study
 .sc-study {
-  padding-bottom: 0;
+  padding: 0;
 
   @include tablet-large {
     position: relative;
   }
   
-  @media (max-width: $tablet-large) {
-    padding: 0;
-  }
-
   .content {
     &.pc {
       display: none;
@@ -448,7 +444,6 @@
     @include tablet-large {
       &.pc {
         display: block;
-        position: relative;
       }
 
       &.mobile {
@@ -496,6 +491,13 @@
 
   .content {
     &.pc {
+
+      .group-title {
+
+        @include tablet-large {
+          padding-top: 8rem;
+        }
+      }
 
       .study-list {
         display: flex;
@@ -549,7 +551,6 @@
         top: 0;
         width: 100%;
         height: 100vh;
-        inset: 0px auto auto 0px;
         background: $color-point;
 
         .bg {
