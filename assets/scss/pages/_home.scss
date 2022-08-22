@@ -49,12 +49,9 @@
     border-radius: 110px;
     border: 2px solid $color-white;
     white-space: nowrap;
-    opacity: 0;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    animation: fadeIn 1.2s ease 1s;
-    animation-fill-mode: forwards;
     display: none;
 
     font: {

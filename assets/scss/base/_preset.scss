@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scrollbar-width: none;
+}
+
 body,
 html {
   overflow-x: hidden;
@@ -11,20 +15,13 @@ svg {
   display: block;
 }
 
-::-moz-selection {
-  background-color: $color-green;
-  color: $color-white;
+::-webkit-scrollbar {
+  display: none;
 }
 
 ::selection {
   background-color: $color-green;
   color: $color-white;
-}
-
-.bg-switch ::-moz-selection,
-.bg-switch>* ::-moz-selection {
-  background-color: $color-point;
-  color: $color-navy;
 }
 
 .bg-switch ::selection,

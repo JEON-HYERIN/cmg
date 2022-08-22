@@ -25,9 +25,13 @@ input, select, button { font: inherit; color: inherit; -webkit-appearance: none;
 
 * { -webkit-box-sizing: border-box; box-sizing: border-box; }
 
+html { scrollbar-width: none; }
+
 body, html { overflow-x: hidden; }
 
 svg { display: block; }
+
+::-webkit-scrollbar { display: none; }
 
 ::-moz-selection { background-color: #006e6e; color: #fff; }
 
@@ -474,7 +478,7 @@ body { font-family: CMGLano; font-size: 1rem; font-weight: 300; color: #333047; 
 
 @media (min-width: 1024px) { .sc-visual .title-area .title { line-height: 1.125; } }
 
-.sc-visual .btn-scroll { position: absolute; left: calc(50% - 55px); bottom: 40px; z-index: 0; width: 110px; height: 110px; border-radius: 110px; border: 2px solid #fff; white-space: nowrap; opacity: 0; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-animation: fadeIn 1.2s ease 1s; animation: fadeIn 1.2s ease 1s; -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards; display: none; font-family: ApercuMonoPro; font-size: .8125rem; text-transform: uppercase; line-height: 1.25; color: #fff; cursor: default; display: none; z-index: 1; }
+.sc-visual .btn-scroll { position: absolute; left: calc(50% - 55px); bottom: 40px; z-index: 0; width: 110px; height: 110px; border-radius: 110px; border: 2px solid #fff; white-space: nowrap; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; display: none; font-family: ApercuMonoPro; font-size: .8125rem; text-transform: uppercase; line-height: 1.25; color: #fff; cursor: default; display: none; z-index: 1; }
 
 @media (min-width: 1280px) { .sc-visual .btn-scroll { display: -webkit-box; display: -ms-flexbox; display: flex; } }
 

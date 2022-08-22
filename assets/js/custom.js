@@ -169,9 +169,9 @@ $(function(){
   $('.sc-visual .title .row span').each(function(index, element) {
     const anim = gsap.fromTo(element, {
       opacity:0,
-      y: 70,
+      yPercent: 100,
     }, {
-      y: 0,
+      yPercent: 0,
       opacity:1,
       delay: (index + 1) * .2,
     });
@@ -183,6 +183,26 @@ $(function(){
       once: true,
     });
   });
+
+  ScrollTrigger.saveStyles('#obj-circle');
+  ScrollTrigger.saveStyles('.btn-scroll');
+  ScrollTrigger.matchMedia({
+    "(min-width: 1280px)": function(){
+      // desktop-xsmall
+      const tlVisual = gsap.timeline({
+        defaults: {
+          // delay: 0.2
+        },
+        scrollTrigger: {
+          trigger: '.sc-visual',
+          // markers: true,
+        }
+      })
+      tlVisual.addLabel('t1')
+      .fromTo('.obj-circle', {scale: 0.875, opacity: 0}, {scale: 1, opacity: 1, duration: 1.5}, 't1')
+      .fromTo('.btn-scroll', {opacity: 0}, {opacity: 1, duration: 1.75}, 't1+=1')
+    }
+  })
 
   // intro
   ScrollTrigger.saveStyles('.sc-intro .floating-txt');
@@ -218,14 +238,14 @@ $(function(){
 
   const tlIntro = gsap.timeline({
     scrollTrigger:{
-      trigger:".sc-intro .group-title",
-      start:'top center',
+      trigger: '.sc-intro .group-title',
+      start:'top 70%',
       // markers:true,
     },
   })
   tlIntro.addLabel('t1')
-  .fromTo('.sc-intro .title-area .sc-title',{opacity:0, x:70},{opacity:1, x:0},'t1')
-  .fromTo('.sc-intro .title-area .desc',{opacity:0, x:70},{opacity:1, x:0},'t1+=.2')
+  .fromTo('.sc-intro .title-area .sc-title',{opacity:0, x:'1rem'},{opacity:1, x:0},'t1')
+  .fromTo('.sc-intro .title-area .desc',{opacity:0, x:'1rem'},{opacity:1, x:0},'t1+=.2')
 
   // whatwedo
   var startCount = {var: 0};
@@ -282,7 +302,7 @@ $(function(){
   $('.sc-whatwedo .value-area .title').each(function(index, element) {
     const anim = gsap.fromTo(element, {
       opacity:0,
-      x: 70,
+      x: '1rem',
     }, {
       x: 0,
       opacity:1,
@@ -290,7 +310,7 @@ $(function(){
     });
     ScrollTrigger.create({
       trigger: element,
-      start:'top 100%',
+      start:'top 70%',
       animation: anim,
       toggleActions: 'play none none none',
       // play pause resume reset
@@ -304,7 +324,8 @@ $(function(){
       const tlWhatwedo = gsap.timeline({
         scrollTrigger:{
           trigger:'.sc-whatwedo .group-title',
-          start:'top center',
+          // start:'top center',
+          start:'top 70%',
           // markers:true,
           toggleActions: 'play none none none',
           // play pause resume reset
@@ -312,28 +333,31 @@ $(function(){
         }
       })
       tlWhatwedo.addLabel('t1')
-      .fromTo('.sc-whatwedo .sc-title',{opacity:0, y:70},{opacity:1, y:0},'t1')
-      .fromTo('.sc-whatwedo .sc-sub-title .txt1',{opacity:0, y:70},{opacity:1, y:0},'t1+=.2')
-      .fromTo('.sc-whatwedo .sc-sub-title .txt2',{opacity:0, y:70},{opacity:1, y:0},'t1+=.4')
-      .fromTo('.sc-whatwedo .sc-sub-title .txt3',{opacity:0, y:70},{opacity:1, y:0},'t1+=.6')
-      .fromTo('.sc-whatwedo .title-area .desc',{opacity:0, y:70},{opacity:1, y:0},'t1+=.8')
+      .fromTo('.sc-whatwedo .sc-title',{opacity:0, x:'1rem'},{opacity:1, x:0},'t1')
+      .fromTo('.sc-whatwedo .sc-sub-title .txt1',{opacity:0, yPercent: 100},{opacity:1, yPercent:0},'t1+=.2')
+      .fromTo('.sc-whatwedo .sc-sub-title .txt2',{opacity:0, yPercent: 100},{opacity:1, yPercent:0},'t1+=.4')
+      .fromTo('.sc-whatwedo .sc-sub-title .txt3',{opacity:0, yPercent: 100},{opacity:1, yPercent:0},'t1+=.6')
+      .fromTo('.sc-whatwedo .title-area .desc',{opacity:0, y:'1rem'},{opacity:1, y:0},'t1+=.8')
     
       $('.sc-whatwedo .whatwedo-item').each(function(index, element) {
         const anim = gsap.fromTo(element, {
           opacity:0,
-          y: 70,
+          y: '1rem',
         }, {
           y: 0,
           opacity:1,
-          delay: (index + 1) * .2,
+          // delay: (index + 1) * .2,
         });
         ScrollTrigger.create({
-          trigger: '.sc-whatwedo .group-title',
-          start:'top center',
+          // trigger: '.sc-whatwedo .group-title',
+          // start:'top center',
+          trigger: element,
+          start:'top 70%',
           animation: anim,
           toggleActions: 'play none none none',
           // play pause resume reset
           once: true,
+          // markers: true
         });
       });
     },
@@ -341,7 +365,7 @@ $(function(){
       const tlWhatwedo = gsap.timeline({
         scrollTrigger:{
           trigger:'.sc-whatwedo .group-title',
-          start:'top center',
+          start:'top 70%',
           // markers:true,
           toggleActions: 'play none none none',
           // play pause resume reset
@@ -349,24 +373,27 @@ $(function(){
         }
       })
       tlWhatwedo.addLabel('t1')
-      .fromTo('.sc-whatwedo .sc-title',{opacity:0, y:70},{opacity:1, y:0},'t1')
-      .fromTo('.sc-whatwedo .sc-sub-title .txt1',{opacity:0, y:70},{opacity:1, y:0},'t1+=.2')
-      .fromTo('.sc-whatwedo .sc-sub-title .txt2',{opacity:0, y:70},{opacity:1, y:0},'t1+=.4')
-      .fromTo('.sc-whatwedo .sc-sub-title .txt3',{opacity:0, y:70},{opacity:1, y:0},'t1+=.6')
-      .fromTo('.sc-whatwedo .title-area .desc',{opacity:0, y:70},{opacity:1, y:0},'t1+=.8')
+      .fromTo('.sc-whatwedo .sc-title',{opacity:0, x:'1rem'},{opacity:1, x:0},'t1')
+      .fromTo('.sc-whatwedo .sc-sub-title .txt1',{opacity:0,  yPercent: 100},{opacity:1, yPercent:0},'t1+=.2')
+      .fromTo('.sc-whatwedo .sc-sub-title .txt2',{opacity:0,  yPercent: 100},{opacity:1, yPercent:0},'t1+=.4')
+      .fromTo('.sc-whatwedo .sc-sub-title .txt3',{opacity:0,  yPercent: 100},{opacity:1, yPercent:0},'t1+=.6')
+      .fromTo('.sc-whatwedo .title-area .desc',{opacity:0, y:'1rem'},{opacity:1, y:0},'t1+=.8')
     
       $('.sc-whatwedo .whatwedo-item').each(function(index, element) {
         const anim = gsap.fromTo(element, {
           opacity:0,
-          y: 70,
+          y: '1rem',
         }, {
           y: 0,
           opacity:1,
-          delay: (index + 1) * .2,
+          // delay: (index + 1) * .2,
         });
         ScrollTrigger.create({
-          trigger: '.whatwedo-list',
-          start:'top 65%',
+          // trigger: '.whatwedo-list',
+          // start:'top 65%',
+          trigger: element,
+          // trigger:'.sc-whatwedo .group-title',
+          start:'top 70%',
           animation: anim,
           toggleActions: 'play none none none',
           // play pause resume reset
@@ -388,13 +415,13 @@ $(function(){
     }
   })
   tlClient.addLabel('t1')
-  .fromTo('.sc-client .sc-title',{opacity:0, y:70},{opacity:1, y:0},'t1')
-  .fromTo('.sc-client .sc-sub-title',{opacity:0, y:70},{opacity:1, y:0},'t1+=.2')
+  .fromTo('.sc-client .sc-title',{opacity:0, x:'1rem'},{opacity:1, x:0},'t1')
+  .fromTo('.sc-client .sc-sub-title',{opacity:0, y:'1rem'},{opacity:1, y:0},'t1+=.2')
 
   $('.sc-client .client-item').each(function(index, element) {
     const anim = gsap.fromTo(element, {
       opacity:0,
-      y: 70,
+      y: '1rem',
     }, {
       y: 0,
       opacity:1,
@@ -526,8 +553,8 @@ $(function(){
     }
   })
   tlInsight.addLabel('t1')
-  .fromTo('.sc-insight .sc-sub-title .txt1',{opacity:0, y:70},{opacity:1, y:0},'t1')
-  .fromTo('.sc-insight .sc-sub-title .txt2',{opacity:0, y:70},{opacity:1, y:0},'t1+=.2')
+  .fromTo('.sc-insight .sc-sub-title .txt1',{opacity:0, yPercent: 100},{opacity:1, yPercent: 0},'t1')
+  .fromTo('.sc-insight .sc-sub-title .txt2',{opacity:0, yPercent: 100},{opacity:1, yPercent: 0},'t1+=.2')
   .fromTo('.sc-insight .insight-list-wrap',{opacity:0, y:70},{opacity:1, y:0},'t1+=.4')
 
   const insightSwiper = new Swiper('.sc-insight .insight-list-wrap.swiper', {
@@ -591,7 +618,8 @@ $(function(){
       gsap.fromTo('#obj-circle', {
       }, {
         scrollTrigger: {
-          trigger: '.sc-visual',
+          // trigger: '.sc-visual',
+          trigger: 'body',
           endTrigger: '.sc-whatwedo',
           start: 'top top', 
           end: 'bottom top',
@@ -610,7 +638,8 @@ $(function(){
         clipPath: 'polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)'
       }, {
         scrollTrigger: {
-          trigger: '.sc-visual',
+          // trigger: '.sc-visual',
+          trigger: 'body',
           endTrigger: '.sc-whatwedo',
           start: 'top top', 
           end: 'bottom top',
