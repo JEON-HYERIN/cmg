@@ -1,3 +1,42 @@
+// loading
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+
+  .logo {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 104px;
+    height: 31px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    z-index: 1;
+
+    @include tablet-large {
+      transform: translate(-100px,-28px);
+    }
+
+    svg {
+      backface-visibility: hidden;
+    }
+  }
+
+  & > svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
 // visual
 .sc-visual {
   position: relative;
@@ -18,12 +57,10 @@
   .title-area {
     position: absolute;
     bottom: 3.5rem;
-    // transform: translateY(-50%);
     z-index: 1;
 
     @include tablet-large {
       bottom: 50%;
-      transform: translateY(50%);
     }
 
     .title {
@@ -43,7 +80,6 @@
     position: absolute;
     left: calc(50% - 55px);
     bottom: 40px;
-    z-index: 0;
     width: 110px;
     height: 110px;
     border-radius: 110px;
@@ -52,7 +88,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    display: none;
 
     font: {
       family: ApercuMonoPro;
@@ -62,7 +97,6 @@
     text-transform: uppercase;
     line-height: 1.25;
     color: $color-white;
-    cursor: default;
     display: none;
     z-index: 1;
 
@@ -86,7 +120,6 @@
     top: 0;
     width: 100%;
     height: 100%;
-    transform: scale(1.075, 1.075);
 
     background: {
       image: url("../images/bg/visual_img_mobile.jpg");
@@ -646,6 +679,14 @@
 // insight
 .sc-insight {
 
+  &.grab {
+    .insight-list,
+    .insight-area {
+      cursor: grabbing;
+    }
+
+  }
+
   .title-area {
     .sc-sub-title {
       @include column(start);
@@ -681,10 +722,13 @@
       padding-left: 23vw;
     }
   }
+  .insight-list,
+  .insight-area {
+    cursor: grab;
+  }
 
   .insight-list {
     margin: 0 auto;
-    cursor: grab;
   }
 
   .insight-item {
@@ -935,12 +979,16 @@
     display: none;
   }
 
-  &.view,
-  &.drag,
-  &.contact {
+  &.hover {
     .cursor-icons {
       opacity: 1;
       transition-duration: 200ms;
+    }
+  }
+
+  &.scroll {
+    .cursor-pointer {
+      transform: translate(-50%, -50%) scale(6);
     }
   }
 

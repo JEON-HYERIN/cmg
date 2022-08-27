@@ -24,8 +24,8 @@ svg {
   color: $color-white;
 }
 
-.bg-switch ::selection,
-.bg-switch>* ::selection {
+[data-drag="switch"] ::selection,
+[data-drag="switch"]>* ::selection {
   background-color: $color-point;
   color: $color-navy;
 }

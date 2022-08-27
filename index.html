@@ -5,16 +5,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Homepage | CMG.</title>
-  <!-- Favicon -->
-  <link rel="apple-touch-icon" href="./apple-touch-icon.png" sizes="180x180" />
-  <link rel="shortcut icon" href="./favicon-32x32.png" sizes="32x32" type="image/png" />
-  <link rel="shortcut icon" href="./favicon-16x16.png" sizes="16x16" type="image/png" />
-  <!-- Google icons -->
+  <!-- Google Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <!-- Swiper -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
   <!-- CSS -->
   <link rel="stylesheet" href="./assets/css/style.css" />
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png" sizes="180x180" />
+  <link rel="shortcut icon" href="./favicon-32x32.png" sizes="32x32" type="image/png" />
+  <link rel="shortcut icon" href="./favicon-16x16.png" sizes="16x16" type="image/png" />
 </head>
 <body>
   <div id="skip-nav">
@@ -24,6 +24,38 @@
     <a href="#client">go to section client</a>
     <a href="#study">go to section study</a>
     <a href="#insight">go to section insight</a>
+  </div>
+  <div class="loading">
+    <div class="logo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="29.194" height="100%" viewBox="0 0 29.194 30.963" style="transform: translate(0px, 0%);">
+        <path fill="#fff" d="M856.335,217.558c-5.369,0-9.12-3.987-9.12-9.756s3.751-9.755,9.12-9.755a8.084,8.084,0,0,1,7.842,5.514l5.667-1.57c-1.363-5.9-7.031-9.67-13.637-9.67-9.076,0-15.342,6.32-15.342,15.481s6.265,15.482,15.342,15.482c6.9,0,12.53-3.987,13.852-9.8l-5.84-1.57a8,8,0,0,1-7.884,5.642" transform="translate(-840.865 -192.321)"></path>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="35.626" height="100%" viewBox="0 0 35.626 29.693" style="transform: translate3d(0px, 0.0759%, 0px);">
+        <path fill="#fff" d="M889.619,213.952l-8.651-20.995h-5.54c-2.3,8.017-3.111,19.129-3.707,29.69h6.307a161.6,161.6,0,0,1,1.49-19.132l7.671,18.663h4.6l7.716-18.663A158.2,158.2,0,0,1,901,222.644h6.35c-.6-10.561-1.407-21.673-3.708-29.69H898.1Z" transform="translate(-871.721 -192.954)"></path>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="30.349" height="100%" viewBox="0 0 30.349 30.963" style="transform: translate3d(0px, 23.7009%, 0px);">
+        <path fill="#fff" d="M939.309,205.043a20.862,20.862,0,0,1-7.969,1.654,19.927,19.927,0,0,1-7.969-1.441v5.6c1.107.806,5.455,1.569,9.631.976-.852,3.478-3.963,5.726-7.969,5.726-5.5,0-9.247-3.987-9.247-9.756s3.749-9.755,9.247-9.755a8.162,8.162,0,0,1,7.586,4.708l5.54-2.29c-1.918-5-7.16-8.144-13.254-8.144-9.2,0-15.469,6.32-15.469,15.481s6.264,15.482,15.469,15.482c8.566,0,14.873-6.193,14.873-14.421a12.374,12.374,0,0,0-.468-3.818" transform="translate(-909.436 -192.321)"></path>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="8.147" height="25%" viewBox="0 0 8.147 8.144" style="transform: translate3d(0px, 89.5134%, 0px);">
+        <path fill="#d9f252" d="M944.053,214.93a4.072,4.072,0,1,0,3.992,4.214,4.013,4.013,0,0,0-3.809-4.209c-.06,0-.12-.005-.18-.005" transform="translate(-939.903 -214.929)"></path>
+      </svg>
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <mask id="mask">
+          <rect x="0" y="0" width="100%" height="100%" fill="#fff"></rect>
+          <circle id="loading-cover" r="0" cx="50%" cy="50%" fill="#000"></circle>
+        </mask>
+      </defs>
+
+      <g mask="url(#mask)">
+        <rect x="0" y="0" width="100%" height="100%" fill="#333047"></rect>
+      </g>
+
+      <g mask="url(#mask)">
+        <circle id="loading-circle" r="0" cx="50%" cy="50%" fill="#d9f252"></circle>
+      </g>
+    </svg>
   </div>
   <div id="wrapper">
     <!-- HEADER -->
@@ -50,67 +82,67 @@
           </div>
         </a>
       </div>
+      <nav id="gnb">
+        <ul class="gnb-list">
+          <li class="gnb-item"><a href="#" class="link-gnb">Expertise</a></li>
+          <li class="gnb-item"><a href="#" class="link-gnb">Portfolio</a></li>
+          <li class="gnb-item"><a href="#" class="link-gnb">About</a></li>
+          <li class="gnb-item"><a href="#" class="link-gnb">Careers</a></li>
+          <li class="gnb-item"><a href="#" class="link-gnb">Insights</a></li>
+          <li class="gnb-item"><a href="#" class="link-gnb">Contact</a></li>
+        </ul>
+        <div class="group-connect">
+          <div class="connect-area">
+            <strong class="title">Connect:</strong>
+            <ul class="sns-list">
+              <li class="sns-item">
+                <a href="#" class="link-sns">
+                  <span class="blind">facebook</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path
+                      d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.378 14.192 5 15.115 5H18V0h-3.808C10.596 0 9 1.583 9 4.615V8z" />
+                  </svg>
+                </a>
+              </li>
+              <li class="sns-item">
+                <a href="#" class="link-sns">
+                  <span class="blind">instagram</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path
+                      d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                  </svg>
+                </a>
+              </li>
+              <li class="sns-item">
+                <a href="#" class="link-sns">
+                  <span class="blind">Linkedin</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path
+                      d="M4.98 3.5C4.98 4.881 3.87 6 2.5 6S.02 4.881.02 3.5C.02 2.12 1.13 1 2.5 1s2.48 1.12 2.48 2.5zM5 8H0v16h5V8zm7.982 0H8.014v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0V24H24V13.869c0-7.88-8.922-7.593-11.018-3.714V8z" />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="signup-area">
+            <form>
+              <fieldset>
+                <legend class="blind">send email</legend>
+                <div class="signup">
+                  <strong class="title">
+                    <span class="row">Sign up</span>
+                    <span class="row">to our</span>
+                    <span class="row">newsletter</span>
+                  </strong>
+                  <input class="input-email" type="email" required="required" placeholder="Your email" />
+                  <button type="submit" class="btn btn-send">Send</button>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </nav>
     </header>
-    <nav id="gnb">
-      <ul class="gnb-list">
-        <li class="gnb-item"><a href="#" class="link-gnb">Expertise</a></li>
-        <li class="gnb-item"><a href="#" class="link-gnb">Portfolio</a></li>
-        <li class="gnb-item"><a href="#" class="link-gnb">About</a></li>
-        <li class="gnb-item"><a href="#" class="link-gnb">Careers</a></li>
-        <li class="gnb-item"><a href="#" class="link-gnb">Insights</a></li>
-        <li class="gnb-item"><a href="#" class="link-gnb">Contact</a></li>
-      </ul>
-      <div class="group-connect">
-        <div class="connect-area">
-          <strong class="title">Connect:</strong>
-          <ul class="sns-list">
-            <li class="sns-item">
-              <a href="#" class="link-sns">
-                <span class="blind">facebook</span>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                  <path
-                    d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.378 14.192 5 15.115 5H18V0h-3.808C10.596 0 9 1.583 9 4.615V8z" />
-                </svg>
-              </a>
-            </li>
-            <li class="sns-item">
-              <a href="#" class="link-sns">
-                <span class="blind">instagram</span>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                  <path
-                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
-                </svg>
-              </a>
-            </li>
-            <li class="sns-item">
-              <a href="#" class="link-sns">
-                <span class="blind">Linkedin</span>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                  <path
-                    d="M4.98 3.5C4.98 4.881 3.87 6 2.5 6S.02 4.881.02 3.5C.02 2.12 1.13 1 2.5 1s2.48 1.12 2.48 2.5zM5 8H0v16h5V8zm7.982 0H8.014v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0V24H24V13.869c0-7.88-8.922-7.593-11.018-3.714V8z" />
-                </svg>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="signup-area">
-          <form>
-            <fieldset>
-              <legend class="blind">send email</legend>
-              <div class="signup">
-                <strong class="title">
-                  <span class="row">Sign up</span>
-                  <span class="row">to our</span>
-                  <span class="row">newsletter</span>
-                </strong>
-                <input class="input-email" type="email" required="required" placeholder="Your email" />
-                <button type="submit" class="btn btn-send">Send</button>
-              </div>
-            </fieldset>
-          </form>
-        </div>
-      </div>
-    </nav>
     <!-- MAIN -->
     <main id="main">
       <!-- visual -->
@@ -125,13 +157,13 @@
             </h2>
           </div>
         </div>
-        <a href="#" class="btn-scroll">
+        <a href="#" class="btn-scroll" role="button">
           Scroll
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.649 11.884">
             <path fill="none" d="M.354.354l5.589 5.588-5.589 5.589" />
           </svg>
         </a>
-        <div class="bg-area thumb-dim"></div>
+        <figure class="bg-area thumb-dim"></figure>
       </section>
       <!-- intro -->
       <section id="intro" class="sc-intro full white">
@@ -151,16 +183,16 @@
         </div>
       </section>
       <!-- whatwedo -->
-      <section id="whatwedo" class="sc-whatwedo bg-switch">
+      <section id="whatwedo" class="sc-whatwedo" data-drag="switch">
         <div class="common-inner">
           <div class="group-title">
             <div class="column-left">
               <div class="title-area">
                 <h2 class="sc-title">What we do</h2>
                 <h3 class="sc-sub-title">
-                  <span class="row"><span class="txt1">Elevate</span></span>
-                  <span class="row"><span class="txt2">your digital</span></span>
-                  <span class="row"><span class="txt3">presence.</span></span>
+                  <span class="row"><span>Elevate</span></span>
+                  <span class="row"><span>your digital</span></span>
+                  <span class="row"><span>presence.</span></span>
                 </h3>
                 <p class="desc">
                   Grow your business and lean on our skills in various digital channels, coupled with the latest tech
@@ -486,7 +518,7 @@
                 </div>
                 <div class="info-box-wrap">
                   <div class="info-box">
-                    <span class="type">News</span>
+                    <em class="type">News</em>
                     <strong class="title">CMG in UK</strong>
                     <span class="btn-view">View</span>
                   </div>
@@ -500,7 +532,7 @@
                 </div>
                 <div class="info-box-wrap">
                   <div class="info-box">
-                    <span class="type">Blog</span>
+                    <em class="type">Blog</em>
                     <strong class="title">Digital Storefront</strong>
                     <span class="btn-view">View</span>
                   </div>
@@ -511,7 +543,7 @@
               <a href="#" class="insight-area thumb-dim no-image">
                 <div class="info-box-wrap">
                   <div class="info-box">
-                    <span class="type">News</span>
+                    <em class="type">News</em>
                     <strong class="title">CMG x Adstream</strong>
                     <span class="btn-view">View</span>
                   </div>
@@ -525,7 +557,7 @@
                 </div>
                 <div class="info-box-wrap">
                   <div class="info-box">
-                    <span class="type">Blog</span>
+                    <em class="type">Blog</em>
                     <strong class="title">5 Common Mistakes</strong>
                     <span class="btn-view">View</span>
                   </div>
@@ -539,7 +571,7 @@
                 </div>
                 <div class="info-box-wrap">
                   <div class="info-box">
-                    <span class="type">Blog</span>
+                    <em class="type">Blog</em>
                     <strong class="title">Google Page Experience Update</strong>
                     <span class="btn-view">View</span>
                   </div>
@@ -655,8 +687,7 @@
           </form>
         </div>
         <div class="magnet-area column-right">
-          <a href="#" class="title"><img src="./assets/images/content/magnet_logo.png" alt="" /><span
-              class="blind">MAGNET</span></a>
+          <a href="#" class="title"><img src="./assets/images/content/magnet_logo.png" alt="MAGNET" /></a>
           <p class="desc">
             MAGNET is a powerful network of independent advertising agencies which span all around the globe. Being
             part of this community means being able to simply make a phone call in order to gather insights, build
