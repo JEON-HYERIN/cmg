@@ -194,15 +194,15 @@ body { font-family: CMGLano; font-size: 1rem; font-weight: 300; color: #333047; 
 
 @media (min-width: 1024px) { #header .btn-nav { width: 6rem; height: 6rem; } }
 
-#header .btn-nav.close .line:nth-of-type(1) { -webkit-transform: translateY(6px) rotate(45deg); transform: translateY(6px) rotate(45deg); }
+#header .btn-nav.on .line:nth-of-type(1) { -webkit-transform: translateY(6px) rotate(45deg); transform: translateY(6px) rotate(45deg); }
 
-@media (min-width: 1024px) { #header .btn-nav.close .line:nth-of-type(1) { -webkit-transform: translateY(10px) rotate(45deg); transform: translateY(10px) rotate(45deg); } }
+@media (min-width: 1024px) { #header .btn-nav.on .line:nth-of-type(1) { -webkit-transform: translateY(10px) rotate(45deg); transform: translateY(10px) rotate(45deg); } }
 
-#header .btn-nav.close .line:nth-of-type(2) { opacity: 0; }
+#header .btn-nav.on .line:nth-of-type(2) { opacity: 0; }
 
-#header .btn-nav.close .line:nth-of-type(3) { -webkit-transform: translateY(-8px) rotate(-45deg); transform: translateY(-8px) rotate(-45deg); }
+#header .btn-nav.on .line:nth-of-type(3) { -webkit-transform: translateY(-8px) rotate(-45deg); transform: translateY(-8px) rotate(-45deg); }
 
-@media (min-width: 1024px) { #header .btn-nav.close .line:nth-of-type(3) { -webkit-transform: translateY(-13px) rotate(-45deg); transform: translateY(-13px) rotate(-45deg); } }
+@media (min-width: 1024px) { #header .btn-nav.on .line:nth-of-type(3) { -webkit-transform: translateY(-13px) rotate(-45deg); transform: translateY(-13px) rotate(-45deg); } }
 
 #header .btn-nav .line-area { position: relative; width: 20px; height: 15px; }
 
