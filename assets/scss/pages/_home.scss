@@ -11,7 +11,7 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     width: 104px;
     height: 31px;
     display: flex;
@@ -20,7 +20,7 @@
     z-index: 1;
 
     @include tablet-large {
-      transform: translate(-100px,-28px);
+      transform: translate(-100px, -28px);
     }
 
     svg {
@@ -28,7 +28,7 @@
     }
   }
 
-  & > svg {
+  &>svg {
     position: absolute;
     top: 0;
     left: 0;
@@ -680,6 +680,7 @@
 .sc-insight {
 
   &.grab {
+
     .insight-list,
     .insight-area {
       cursor: grabbing;
@@ -722,6 +723,7 @@
       padding-left: 23vw;
     }
   }
+
   .insight-list,
   .insight-area {
     cursor: grab;
@@ -940,24 +942,31 @@
 
   &-pointer {
     position: absolute;
-    height: 1rem;
     width: 1rem;
-    border-radius: 9999px;
-    background-color: $color-point;
-    transition-property: transform;
-    transition-duration: 200ms;
-    transition-timing-function: cubic-bezier(.25, .46, .45, .94);
+    height: 1rem;
     transform: translate(-50%, -50%) scale(1);
+    border-radius: 50%;
+    background-color: $color-point;
+
+    transition: {
+      property: transform;
+      duration: 200ms;
+      timing-function: cubic-bezier(.25, .46, .45, .94);
+    }
   }
 
   &-icons {
     position: absolute;
-    transform: translate(-50%, -50%);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: ApercuMonoPro;
-    font-size: 13px;
+    transform: translate(-50%, -50%);
+
+    font: {
+      family: ApercuMonoPro;
+      size: 13px;
+    }
+
     line-height: 1.25;
     color: $color-navy;
     text-transform: uppercase;

@@ -757,7 +757,7 @@ $(function(){
 
 
 
-  $('.sc-visual .btn-scroll').mouseover(function(){
+  $('.sc-visual .btn-scroll').mouseenter(function(){
     $('#cursor .txt').text('scroll');
     $('#cursor').addClass('hover scroll');
   });
@@ -765,7 +765,7 @@ $(function(){
     $('#cursor .txt').empty();
     $('#cursor').removeClass('hover scroll');
   });
-  $('.sc-study .study-area').mouseover(function(){
+  $('.sc-study .study-area').mouseenter(function(){
     $('#cursor .txt').text('view');
     $('#cursor').addClass('hover view');
   });
@@ -774,7 +774,7 @@ $(function(){
     $('#cursor').removeClass('hover view');
   });
 
-  $('.sc-insight .insight-area').mouseover(function(){
+  $('.sc-insight .insight-area').mouseenter(function(){
     $('#cursor .txt').text('drag');
     $('#cursor').addClass('hover drag');
   });
@@ -783,7 +783,7 @@ $(function(){
     $('#cursor').removeClass('hover drag');
   });
 
-  $('.footer-title a').mouseover(function(){
+  $('.footer-title a').mouseenter(function(){
     $('#cursor .txt').text('contact us');
     $('#cursor').addClass('hover contact');
   });
