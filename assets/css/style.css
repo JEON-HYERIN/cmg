@@ -27,7 +27,7 @@ input, select, button { font: inherit; color: inherit; -webkit-appearance: none;
 
 html { scrollbar-width: none; }
 
-body, html { overflow-x: hidden; }
+html, body { overflow-x: hidden; }
 
 svg { display: block; }
 
