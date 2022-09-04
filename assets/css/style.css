@@ -464,7 +464,7 @@ body { font-family: CMGLano; font-size: 1rem; font-weight: 300; color: #333047; 
 
 .swiper-pagination.default .swiper-pagination-bullet-active { background-color: #333047; }
 
-.loading { position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 100; }
+.loading { position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 200; }
 
 .loading .logo { position: fixed; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); width: 104px; height: 31px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: end; -ms-flex-align: end; align-items: flex-end; overflow: hidden; z-index: 1; }
 
